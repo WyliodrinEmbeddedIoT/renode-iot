@@ -1,0 +1,7 @@
+/home/cosmin/git/renode/lib/AntShell/AntShell/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/cosmin/git/renode/lib/AntShell/AntShell/bin/Debug/AntShell.dll.mdb
+/home/cosmin/git/renode/lib/AntShell/AntShell/bin/Debug/AntShell.dll
+/home/cosmin/git/renode/lib/AntShell/AntShell/obj/Debug/AntShell.dll
+/home/cosmin/git/renode/lib/AntShell/AntShell/obj/Debug/AntShell.dll.mdb
+/home/cosmin/git/renode/lib/AntShell/AntShell/bin/Debug/Migrant.dll
+/home/cosmin/git/renode/lib/AntShell/AntShell/bin/Debug/Migrant.dll.mdb

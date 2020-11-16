@@ -1,0 +1,72 @@
+using "platforms/cpus/silabs/efr32/efr32mg1.repl"
+
+rtcc: Timers.EFR32_RTCC @ sysbus 0x40042000
+    frequency: 32768
+    -> nvic@30
+
+i2c0:
+    -> nvic@17
+i2c1: I2C.EFR32_I2CController @ sysbus <0x4000c400, +0x400>
+    -> nvic@42
+
+usart0:
+    ReceiveIRQ -> nvic@12
+    TransmitIRQ -> nvic@13
+usart1:
+    ReceiveIRQ -> nvic@20
+    TransmitIRQ -> nvic@21
+usart2: UART.EFR32_USART @ sysbus <0x40010800, +0x400>
+    ReceiveIRQ -> nvic@40
+    TransmitIRQ -> nvic@41
+usart3: UART.EFR32_USART @ sysbus <0x40010c00, +0x400>
+    ReceiveIRQ -> nvic@43
+    TransmitIRQ -> nvic@44
+
+leUart0:
+    -> nvic@22
+
+gpioPort:
+    EvenIRQ -> nvic@10
+    OddIRQ -> nvic@18
+
+sram:
+    size: 0x00040000
+
+flash:
+    size: 0x00100000
+
+flashCtrl: MTD.EFR32xg13FlashController @ sysbus 0x400E0000
+    flash: flash
+
+timer0:
+    -> nvic@11
+
+timer1:
+    -> nvic@19
+
+wtimer0: Timers.EFR32_Timer @ sysbus 0x4001a000
+    frequency: 0x1000000 //bogus
+    width: TimerWidth.Bit32
+    -> nvic@36
+
+wtimer1: Timers.EFR32_Timer @ sysbus 0x4001a400
+    frequency: 0x1000000 //bogus
+    width: TimerWidth.Bit32
+    -> nvic@37
+
+deviceInformation:
+    deviceFamily: DeviceFamily.EFR32MG12P
+
+sysbus:
+    init add:
+        Tag <0x400f0000,0x400f03ff> "CRYPTO0"
+        Tag <0x4004e400,0x4004e7ff> "PCNT1"
+        Tag <0x4004e800,0x4004ebff> "PCNT2"
+        Tag <0x40008000,0x400083ff> "VDAC0"
+        Tag <0x4001f000,0x4001f3ff> "CSEN"
+        Tag <0x40055000,0x400553ff> "LESENSE"
+        Tag <0x40052400,0x400527ff> "WDOG1"
+        Tag <0x40022000,0x400223ff> "SMU"
+        Tag <0x4001d000,0x4001d3ff> "TRNG0"
+        Tag <0x4001d004 0x4> "FIFOLEVEL" 0x40
+        Tag <0x40002038 0x4> "IF" 0x1 #single conversion finished

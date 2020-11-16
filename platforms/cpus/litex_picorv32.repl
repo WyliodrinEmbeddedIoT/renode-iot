@@ -1,0 +1,17 @@
+using "platforms/cpus/litex_common.repl"
+
+cpu: CPU.PicoRV32 @ sysbus
+    cpuType: "rv32imc"
+
+timer0: Timers.LiteX_Timer @ sysbus 0xE0002000
+    frequency: 100000000
+
+uart:
+    -> cpu@3
+
+timer0:
+    -> cpu@4
+
+eth:
+    -> cpu@5
+

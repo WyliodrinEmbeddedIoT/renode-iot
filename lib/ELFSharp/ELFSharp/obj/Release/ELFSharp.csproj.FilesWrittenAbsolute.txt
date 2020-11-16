@@ -1,0 +1,5 @@
+/home/cosmin/git/renode/lib/ELFSharp/ELFSharp/obj/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/cosmin/git/renode/lib/ELFSharp/ELFSharp/bin/Release/ELFSharp.dll.mdb
+/home/cosmin/git/renode/lib/ELFSharp/ELFSharp/bin/Release/ELFSharp.dll
+/home/cosmin/git/renode/lib/ELFSharp/ELFSharp/obj/Release/ELFSharp.dll
+/home/cosmin/git/renode/lib/ELFSharp/ELFSharp/obj/Release/ELFSharp.dll.mdb

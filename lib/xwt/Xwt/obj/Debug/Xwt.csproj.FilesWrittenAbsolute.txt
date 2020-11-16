@@ -1,0 +1,5 @@
+/home/cosmin/git/renode/lib/xwt/Xwt/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/cosmin/git/renode/lib/xwt/Xwt/bin/Debug/Xwt.dll.mdb
+/home/cosmin/git/renode/lib/xwt/Xwt/bin/Debug/Xwt.dll
+/home/cosmin/git/renode/lib/xwt/Xwt/obj/Debug/Xwt.dll
+/home/cosmin/git/renode/lib/xwt/Xwt/obj/Debug/Xwt.dll.mdb

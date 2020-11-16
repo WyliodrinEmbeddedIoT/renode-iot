@@ -1,0 +1,3 @@
+/home/cosmin/git/renode/lib/cctask/CCTask/obj/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/cosmin/git/renode/lib/cctask/CCTask/bin/Release/CCTask.dll
+/home/cosmin/git/renode/lib/cctask/CCTask/obj/Release/CCTask.dll

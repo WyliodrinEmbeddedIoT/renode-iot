@@ -1,0 +1,295 @@
+﻿<#
+//
+// Copyright (c) 2010-2018 Antmicro
+// Copyright (c) 2011-2015 Realtime Embedded
+//
+// This file is licensed under the MIT License.
+// Full license text is available in 'licenses/MIT.txt'.
+//
+#>
+<#@ template language="C#" hostspecific="true" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ include file="RegisterEnumParserContent.tt" #>
+<#
+    if(CLASS_NAME == null)
+    {
+        throw new ArgumentException("CLASS_NAME variable not set");
+    }
+    if(HEADER_FILE == null)
+    {
+        throw new ArgumentException("HEADER_FILE variable not set");
+    }
+
+    RegistersEnumParser parser;
+    var baseDirectoryPath = Directory.GetParent(Path.GetDirectoryName(((ITextTemplatingEngineHost)this.Host).TemplateFile)).Parent.Parent.FullName;
+    var fullPath = Path.Combine(baseDirectoryPath, HEADER_FILE);
+    using(var stream = File.OpenRead(fullPath))
+    {
+        parser = new RegistersEnumParser(stream, DEFINES);
+    }
+
+    if(PC_REGISTER != null)
+    {
+        parser.Map("PC", PC_REGISTER);
+    }
+
+    foreach(var ignored in REGISTERS_FROM_BASE_CLASS)
+    {
+        parser.Ignore(ignored);
+    }
+
+    var virtualRegisters = new HashSet<string> { "PC" };
+#>
+/********************************************************
+*
+* Warning!
+* This file was generated automatically.
+* Please do not edit. Changes should be made in the
+* appropriate *.tt file.
+*
+*/
+using System;
+using System.Linq;
+using System.Collections.Generic;
+using Antmicro.Renode.Peripherals.CPU.Registers;
+using Antmicro.Renode.Utilities.Binding;
+using Antmicro.Renode.Exceptions;
+
+namespace Antmicro.Renode.Peripherals.CPU
+{
+    public partial class <#=CLASS_NAME#>
+    {
+<#
+    var widths = parser.Registers
+        .Union(parser.RegisterGroups.SelectMany(x => x.GetRegisters()))
+        .Select(x => x.Width)
+        .OrderBy(x => x)
+        .Distinct()
+        .ToArray();
+#>
+        public override void SetRegisterUnsafe(int register, ulong value)
+        {
+            if(!mapping.TryGetValue((<#=CLASS_NAME#>Registers)register, out var r))
+            {
+                throw new RecoverableException($"Wrong register index: {register}");
+            }
+<#
+    if(UNSETTABLE_REGISTERS.Any())
+    {
+#>
+            if(r.IsReadonly)
+            {
+                throw new RecoverableException($"Register: {register} value is not writable.");
+            }
+<# 
+    }
+#>
+
+<#
+    if(widths.Length == 1)
+    {
+#>
+            SetRegisterValue<#=widths[0]#>(r.Index, checked((<#=RegisterTypeHelper.GetTypeName(widths[0])#>)value));
+<#
+    }
+    else
+    {
+#>
+            switch(r.Width)
+            {
+<#
+        foreach(var width in widths)
+        {
+#>
+            case <#=width#>:
+                SetRegisterValue<#=width#>(r.Index, checked((<#=RegisterTypeHelper.GetTypeName(width)#>)value));
+                break;
+<#
+        }
+#>
+            default:
+                throw new ArgumentException($"Unsupported register width: {r.Width}");
+            }
+<#
+    }
+#>
+        }
+
+        public override RegisterValue GetRegisterUnsafe(int register)
+        {
+            if(!mapping.TryGetValue((<#=CLASS_NAME#>Registers)register, out var r))
+            {
+                throw new RecoverableException($"Wrong register index: {register}");
+            }
+
+<#
+    if(widths.Length == 1)
+    {
+#>
+            return GetRegisterValue<#=widths[0]#>(r.Index);
+<#
+    }
+    else
+    {
+#>
+            switch(r.Width)
+            {
+<#
+        foreach(var width in widths)
+        {
+#>
+            case <#=width#>:
+                return GetRegisterValue<#=width#>(r.Index);
+                break;
+<#
+        }
+#>
+            default:
+                throw new ArgumentException($"Unsupported register width: {r.Width}");
+            }
+<#
+    }
+#>
+        }
+
+        public override IEnumerable<CPURegister> GetRegisters()
+        {
+            return mapping.Values.OrderBy(x => x.Index);
+        }
+
+<#
+    foreach(var register in parser.Registers.Where(x => !x.IsIgnored))
+    {
+#>
+        [Register]
+        public <#= virtualRegisters.Contains(register.Name) ? "override " : "" #>RegisterValue <#=register.Name#>
+        {
+            get
+            {
+                return GetRegisterValue<#=register.Width#>((int)<#=CLASS_NAME#>Registers.<#=register.Name#>);
+            }
+            set
+            {
+<#
+        if(BEFORE_WRITE_HOOKS.ContainsKey(register.Name))
+        {
+#>
+                value = <#=BEFORE_WRITE_HOOKS[register.Name]#>(value);
+<#
+        }
+#>
+                SetRegisterValue<#=register.Width#>((int)<#=CLASS_NAME#>Registers.<#=register.Name#>, value);
+<#
+        if(AFTER_WRITE_HOOKS.ContainsKey(register.Name))
+        {
+#>
+                <#=AFTER_WRITE_HOOKS[register.Name]#>(value);
+<#
+        }
+#>
+            }
+        }
+<#
+    }
+
+    foreach(var registerGroup in parser.RegisterGroups.Where(x => !x.IsIgnored))
+    {
+#>
+        public RegistersGroup <#=registerGroup.Name#> { get; private set; }
+<#
+    }
+#>
+
+        protected override void InitializeRegisters()
+        {
+<#
+    if(REGISTERS_FROM_BASE_CLASS.Count > 0)
+    {
+#>
+            base.InitializeRegisters();
+<#
+    }
+    foreach(var registerGroup in parser.RegisterGroups.Where(x => !x.IsIgnored))
+    {#>
+            var indexValueMap<#=registerGroup.Name#> = new Dictionary<int, <#=CLASS_NAME#>Registers>
+            {
+<#
+        foreach(var elem in registerGroup.IndexValueMap)
+        {
+#>
+                { <#=elem.Key#>, <#=CLASS_NAME#>Registers.<#=registerGroup.Name#><#=elem.Key#> },
+<#
+        }
+#>
+            };
+            <#=registerGroup.Name#> = new RegistersGroup(
+                indexValueMap<#=registerGroup.Name#>.Keys,
+                i => GetRegisterUnsafe((int)indexValueMap<#=registerGroup.Name#>[i]),
+                (i, v) => SetRegisterUnsafe((int)indexValueMap<#=registerGroup.Name#>[i], v));
+
+<#
+    }
+#>
+        }
+
+<#
+    var ignoredWidths = parser.RegisterGroups.Where(x => x.IsIgnored).Select(x => x.Width).Union(parser.Registers.Where(x => x.IsIgnored).Select(x => x.Width)).Distinct();
+    foreach(var width in parser.RegisterGroups.Select(x => x.Width).Union(parser.Registers.Select(x => x.Width)).Except(ignoredWidths).Distinct())
+    {
+#>
+        // 649:  Field '...' is never assigned to, and will always have its default value null
+        #pragma warning disable 649
+
+        [Import(Name = "tlib_set_register_value_<#=width#>")]
+        protected ActionInt32<#=RegisterTypeHelper.GetTypeName(width)#> SetRegisterValue<#=width#>;
+        [Import(Name = "tlib_get_register_value_<#=width#>")]
+        protected Func<#=RegisterTypeHelper.GetTypeName(width)#>Int32 GetRegisterValue<#=width#>;
+
+        #pragma warning restore 649
+
+<#
+    }
+#>
+        private static readonly Dictionary<<#=CLASS_NAME#>Registers, CPURegister> mapping = new Dictionary<<#=CLASS_NAME#>Registers, CPURegister>
+        {
+<#
+    foreach(var register in
+        parser.Registers
+        .Union(parser.RegisterGroups.SelectMany(x => x.GetRegisters()))
+        .GroupBy(x => x.Value)
+        .OrderBy(x => x.Key))
+    {
+#>
+            { <#=CLASS_NAME#>Registers.<#=register.First().Name#>,  new CPURegister(<#=register.Key#>, <#=register.Select(x => x.Width).First()#>, isGeneral: <#= register.Any(x => GENERAL_REGISTERS.Contains(x.Name)) ? "true" : "false" #>, isReadonly: <#= register.Any(x => UNSETTABLE_REGISTERS.Contains(x.Name)) ? "true" : "false" #>) },
+<#
+    }
+#>
+        };
+    }
+
+    public enum <#=CLASS_NAME#>Registers
+    {
+<#
+    foreach(var register in parser.Registers)
+    {
+#>
+        <#=register.Name#> = <#=register.Value#>,
+<#
+    }
+
+    foreach(var registerGroup in parser.RegisterGroups)
+    {
+        foreach(var index in registerGroup.IndexValueMap.OrderBy(x => x.Key))
+        {
+#>
+        <#=registerGroup.Name#><#=index.Key#> = <#=index.Value#>,
+<#
+        }
+    }
+#>
+    }
+}

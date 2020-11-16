@@ -1,0 +1,13 @@
+/home/cosmin/git/renode/lib/xwt/Xwt.Gtk/obj/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/cosmin/git/renode/lib/xwt/Xwt.Gtk/obj/Release/Xwt.GtkBackend.delete.png
+/home/cosmin/git/renode/lib/xwt/Xwt.Gtk/obj/Release/Xwt.GtkBackend.icons.light.searchbox-clear-16.png
+/home/cosmin/git/renode/lib/xwt/Xwt.Gtk/obj/Release/Xwt.GtkBackend.icons.light.searchbox-clear-16@2x.png
+/home/cosmin/git/renode/lib/xwt/Xwt.Gtk/obj/Release/Xwt.GtkBackend.icons.light.searchbox-search-16@2x.png
+/home/cosmin/git/renode/lib/xwt/Xwt.Gtk/obj/Release/Xwt.GtkBackend.icons.light.searchbox-search-16.png
+/home/cosmin/git/renode/lib/xwt/Xwt.Gtk/bin/Release/Xwt.Gtk.dll.config
+/home/cosmin/git/renode/lib/xwt/Xwt.Gtk/bin/Release/Xwt.Gtk.dll.mdb
+/home/cosmin/git/renode/lib/xwt/Xwt.Gtk/bin/Release/Xwt.Gtk.dll
+/home/cosmin/git/renode/lib/xwt/Xwt.Gtk/obj/Release/Xwt.Gtk.dll
+/home/cosmin/git/renode/lib/xwt/Xwt.Gtk/obj/Release/Xwt.Gtk.dll.mdb
+/home/cosmin/git/renode/lib/xwt/Xwt.Gtk/bin/Release/Xwt.dll
+/home/cosmin/git/renode/lib/xwt/Xwt.Gtk/bin/Release/Xwt.dll.mdb

@@ -1,0 +1,3 @@
+/home/cosmin/git/renode/lib/CxxDemangler/CxxDemangler/obj/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/cosmin/git/renode/lib/CxxDemangler/CxxDemangler/bin/Release/CxxDemangler.dll
+/home/cosmin/git/renode/lib/CxxDemangler/CxxDemangler/obj/Release/CxxDemangler.dll

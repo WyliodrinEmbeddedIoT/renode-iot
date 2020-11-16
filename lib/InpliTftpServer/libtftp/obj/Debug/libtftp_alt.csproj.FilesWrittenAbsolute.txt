@@ -1,0 +1,5 @@
+/home/cosmin/git/renode/lib/InpliTftpServer/libtftp/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/cosmin/git/renode/lib/InpliTftpServer/libtftp/bin/Debug/libtftp.dll.mdb
+/home/cosmin/git/renode/lib/InpliTftpServer/libtftp/bin/Debug/libtftp.dll
+/home/cosmin/git/renode/lib/InpliTftpServer/libtftp/obj/Debug/libtftp.dll
+/home/cosmin/git/renode/lib/InpliTftpServer/libtftp/obj/Debug/libtftp.dll.mdb

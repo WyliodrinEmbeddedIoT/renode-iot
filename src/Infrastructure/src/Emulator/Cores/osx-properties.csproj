@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+<PropertyGroup>
+  <CompilerPath>/usr/bin/clang</CompilerPath>
+  <LinkerPath>/usr/bin/clang</LinkerPath>
+  <ArPath>/usr/bin/ar</ArPath>
+  <CurrentPlatform>OSX</CurrentPlatform>
+  <DefineConstants>$(DefineConstants);PLATFORM_OSX</DefineConstants>
+</PropertyGroup>
+</Project>

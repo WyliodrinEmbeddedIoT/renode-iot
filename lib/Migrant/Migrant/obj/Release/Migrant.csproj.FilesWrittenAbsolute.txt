@@ -1,0 +1,3 @@
+/home/cosmin/git/renode/lib/Migrant/Migrant/obj/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/cosmin/git/renode/lib/Migrant/Migrant/bin/Release/Migrant.dll
+/home/cosmin/git/renode/lib/Migrant/Migrant/obj/Release/Migrant.dll

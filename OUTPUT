@@ -1,0 +1,40 @@
+17:27:43.4929 [INFO] Loaded monitor commands from: /home/cosmin/git/renode/./scripts/monitor.py
+17:27:46.3107 [INFO] Including script: /home/cosmin/git/renode/scripts/single-node/stm32f4_discovery.resc
+17:27:46.3229 [INFO] System bus created.
+17:27:47.1460 [INFO] sysbus: Loaded SVD: /tmp/renode-87547/e9be45e9-cbf0-4d80-9401-98df4bbbf716.tmp. Name: STM32F40x. Description: STM32F40x.
+17:27:47.3428 [INFO] sysbus: Loading segment of 85024 bytes length at 0x8000000.
+17:27:47.3498 [INFO] sysbus: Loading segment of 8192 bytes length at 0x8030000.
+17:27:47.3499 [INFO] sysbus: Loading segment of 2116 bytes length at 0x8014C20.
+17:27:47.4484 [INFO] cpu: Guessing VectorTableOffset value to be 0x8000000.
+17:27:47.4501 [INFO] cpu: Setting initial values: PC = 0x8001D4D, SP = 0x20001000.
+17:27:47.4522 [INFO] STM32F4_Discovery: Machine started.
+17:27:47.5040 [WARNING] sysbus: Read from an unimplemented register SYSCFG:EXTICR1 (0x40013808), returning a value from SVD: 0x0.
+17:27:47.5047 [WARNING] sysbus: Write of value 0x60 to an unimplemented register SYSCFG:EXTICR1 (0x40013808) generated from SVD.
+17:27:47.5055 [WARNING] sysbus: Read from an unimplemented register SYSCFG:EXTICR4 (0x40013814), returning a value from SVD: 0x0.
+17:27:47.5072 [WARNING] sysbus: Write of value 0x5000 to an unimplemented register SYSCFG:EXTICR4 (0x40013814) generated from SVD.
+17:27:47.5075 [WARNING] sysbus: Read from an unimplemented register SYSCFG:EXTICR4 (0x40013814), returning a value from SVD: 0x0.
+17:27:47.5076 [WARNING] sysbus: Write of value 0x500 to an unimplemented register SYSCFG:EXTICR4 (0x40013814) generated from SVD.
+17:27:47.5080 [WARNING] sysbus: Read from an unimplemented register SYSCFG:EXTICR1 (0x40013808), returning a value from SVD: 0x0.
+17:27:47.5080 [WARNING] sysbus: Write of value 0x6 to an unimplemented register SYSCFG:EXTICR1 (0x40013808) generated from SVD.
+17:27:47.5103 [WARNING] sysbus: Read from an unimplemented register I2C1:CR1 (0x40005400), returning a value from SVD: 0x0.
+17:27:47.5103 [WARNING] sysbus: Write of value 0x0 to an unimplemented register I2C1:CR1 (0x40005400) generated from SVD.
+17:27:47.5104 [WARNING] sysbus: Read from an unimplemented register I2C1:CR2 (0x40005404), returning a value from SVD: 0x0.
+17:27:47.5105 [WARNING] sysbus: Write of value 0x10 to an unimplemented register I2C1:CR2 (0x40005404) generated from SVD.
+17:27:47.5106 [WARNING] sysbus: Read from an unimplemented register I2C1:CCR (0x4000541C), returning a value from SVD: 0x0.
+17:27:47.5107 [WARNING] sysbus: Write of value 0x50 to an unimplemented register I2C1:CCR (0x4000541C) generated from SVD.
+17:27:47.5108 [WARNING] sysbus: Read from an unimplemented register I2C1:TRISE (0x40005420), returning a value from SVD: 0x2.
+17:27:47.5108 [WARNING] sysbus: Write of value 0x11 to an unimplemented register I2C1:TRISE (0x40005420) generated from SVD.
+17:27:47.5109 [WARNING] sysbus: Read from an unimplemented register I2C1:CR1 (0x40005400), returning a value from SVD: 0x0.
+17:27:47.5109 [WARNING] sysbus: Write of value 0x1 to an unimplemented register I2C1:CR1 (0x40005400) generated from SVD.
+17:27:47.5112 [WARNING] sysbus: Read from an unimplemented register SYSCFG:EXTICR2 (0x4001380C), returning a value from SVD: 0x0.
+17:27:47.5112 [WARNING] sysbus: Write of value 0x60 to an unimplemented register SYSCFG:EXTICR2 (0x4001380C) generated from SVD.
+17:27:47.5129 [WARNING] sysbus: Read from an unimplemented register GPIOG:MODER (0x40021800), returning a value from SVD: 0x0.
+17:27:47.5130 [WARNING] sysbus: Write of value 0x0 to an unimplemented register GPIOG:MODER (0x40021800) generated from SVD.
+17:27:47.5169 [WARNING] sysbus: Read from an unimplemented register FSMC:BCR1 (0xA0000000), returning a value from SVD: 0x30D0.
+17:27:47.5170 [WARNING] sysbus: Write of value 0x2050D1 to an unimplemented register FSMC:BCR1 (0xA0000000) generated from SVD.
+17:27:47.5172 [WARNING] sysbus: Read from an unimplemented register FSMC:BTR1 (0xA0000004), returning a value from SVD: 0xFFFFFFFF.
+17:27:47.5173 [WARNING] sysbus: Write of value 0xC2212419 to an unimplemented register FSMC:BTR1 (0xA0000004) generated from SVD.
+17:27:47.5175 [WARNING] sysbus: Read from an unimplemented register FSMC:BWTR1 (0xA0000104), returning a value from SVD: 0xFFFFFFF.
+17:27:47.5176 [WARNING] sysbus: Write of value 0xFF00711 to an unimplemented register FSMC:BWTR1 (0xA0000104) generated from SVD.
+17:27:56.9458 [INFO] STM32F4_Discovery: Machine paused.
+17:27:56.9536 [INFO] STM32F4_Discovery: Disposed.
