@@ -1,5 +1,0 @@
-/home/cosmin/git/renode/lib/FdtSharp/FdtSharp/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/cosmin/git/renode/lib/FdtSharp/FdtSharp/bin/Debug/FdtSharp.dll.mdb
-/home/cosmin/git/renode/lib/FdtSharp/FdtSharp/bin/Debug/FdtSharp.dll
-/home/cosmin/git/renode/lib/FdtSharp/FdtSharp/obj/Debug/FdtSharp.dll
-/home/cosmin/git/renode/lib/FdtSharp/FdtSharp/obj/Debug/FdtSharp.dll.mdb

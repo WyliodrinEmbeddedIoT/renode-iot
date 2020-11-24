@@ -1,3 +1,3 @@
-/home/cosmin/git/renode/lib/InpliTftpServer/libtftp/obj/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/cosmin/git/renode/lib/InpliTftpServer/libtftp/bin/Release/libtftp.dll
-/home/cosmin/git/renode/lib/InpliTftpServer/libtftp/obj/Release/libtftp.dll
+/home/tock/renode-iot/lib/InpliTftpServer/libtftp/obj/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/tock/renode-iot/lib/InpliTftpServer/libtftp/bin/Release/libtftp.dll
+/home/tock/renode-iot/lib/InpliTftpServer/libtftp/obj/Release/libtftp.dll

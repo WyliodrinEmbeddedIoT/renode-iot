@@ -58,6 +58,14 @@ gpioPortE: GPIOPort.STM32F4GPIOPort @ sysbus <0x40021000, +0x400>
     [0-15] -> exti@[0-15]
 
 gpioPortF: GPIOPort.STM32F4GPIOPort @ sysbus <0x40021400, +0x400>
+    pullUpPullDownResetValue: 0x64000000
+    [0-15] -> exti@[0-15]
+
+gpioPortG: GPIOPort.STM32F4GPIOPort @ sysbus <0x40021800, +0x400>
+    pullUpPullDownResetValue: 0x64000000
+    [0-15] -> exti@[0-15]
+
+gpioPortH: GPIOPort.STM32F4GPIOPort @ sysbus <0x40021C00, +0x400>
     [0-15] -> exti@[0-15]
 
 ethernet: Network.SynopsysEthernetMAC @ sysbus 0x40028000

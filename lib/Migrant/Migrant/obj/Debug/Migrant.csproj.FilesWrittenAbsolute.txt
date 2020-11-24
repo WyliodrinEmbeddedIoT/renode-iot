@@ -1,5 +1,0 @@
-/home/cosmin/git/renode/lib/Migrant/Migrant/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/cosmin/git/renode/lib/Migrant/Migrant/bin/Debug/Migrant.dll.mdb
-/home/cosmin/git/renode/lib/Migrant/Migrant/bin/Debug/Migrant.dll
-/home/cosmin/git/renode/lib/Migrant/Migrant/obj/Debug/Migrant.dll
-/home/cosmin/git/renode/lib/Migrant/Migrant/obj/Debug/Migrant.dll.mdb

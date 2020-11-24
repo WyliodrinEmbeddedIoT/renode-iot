@@ -1,5 +1,5 @@
-/home/cosmin/git/renode/lib/FdtSharp/FdtSharp/obj/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/cosmin/git/renode/lib/FdtSharp/FdtSharp/bin/Release/FdtSharp.dll.mdb
-/home/cosmin/git/renode/lib/FdtSharp/FdtSharp/bin/Release/FdtSharp.dll
-/home/cosmin/git/renode/lib/FdtSharp/FdtSharp/obj/Release/FdtSharp.dll
-/home/cosmin/git/renode/lib/FdtSharp/FdtSharp/obj/Release/FdtSharp.dll.mdb
+/home/tock/renode-iot/lib/FdtSharp/FdtSharp/obj/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/tock/renode-iot/lib/FdtSharp/FdtSharp/bin/Release/FdtSharp.pdb
+/home/tock/renode-iot/lib/FdtSharp/FdtSharp/bin/Release/FdtSharp.dll
+/home/tock/renode-iot/lib/FdtSharp/FdtSharp/obj/Release/FdtSharp.dll
+/home/tock/renode-iot/lib/FdtSharp/FdtSharp/obj/Release/FdtSharp.pdb

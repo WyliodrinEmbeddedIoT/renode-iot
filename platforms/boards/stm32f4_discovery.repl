@@ -1,10 +1,28 @@
 using "platforms/cpus/stm32f4.repl"
 
-UserButton: Miscellaneous.Button @ gpioPortA
+SelectButton: Miscellaneous.Button @ gpioPortA
     -> gpioPortA@0
 
-UserLED: Miscellaneous.LED @ gpioPortD
+DownButton: Miscellaneous.Button @ gpioPortG
+    -> gpioPortG@1
+
+LeftButton: Miscellaneous.Button @ gpioPortF
+    -> gpioPortF@15
+
+RightButton: Miscellaneous.Button @ gpioPortF
+    -> gpioPortF@14
+
+UpButton: Miscellaneous.Button @ gpioPortG
+    -> gpioPortG@0
+
+UserLED0: Miscellaneous.LED @ gpioPortD
+UserLED1: Miscellaneous.LED @ gpioPortD
+UserLED2: Miscellaneous.LED @ gpioPortD
+UserLED3: Miscellaneous.LED @ gpioPortD
 
 gpioPortD:
-    12 -> UserLED@0
+    12 -> UserLED0@0
+    13 -> UserLED1@0
+    14 -> UserLED2@0
+    15 -> UserLED3@0
    

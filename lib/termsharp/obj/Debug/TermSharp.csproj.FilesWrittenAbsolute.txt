@@ -1,7 +1,0 @@
-/home/cosmin/git/renode/lib/termsharp/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/cosmin/git/renode/lib/termsharp/bin/Debug/TermSharp.dll.mdb
-/home/cosmin/git/renode/lib/termsharp/bin/Debug/TermSharp.dll
-/home/cosmin/git/renode/lib/termsharp/obj/Debug/TermSharp.dll
-/home/cosmin/git/renode/lib/termsharp/obj/Debug/TermSharp.dll.mdb
-/home/cosmin/git/renode/lib/termsharp/bin/Debug/Xwt.dll
-/home/cosmin/git/renode/lib/termsharp/bin/Debug/Xwt.dll.mdb

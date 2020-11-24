@@ -1,3 +1,3 @@
-/home/cosmin/git/renode/lib/Packet.Net/PacketDotNet/obj/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/cosmin/git/renode/lib/Packet.Net/PacketDotNet/bin/Release/PacketDotNet.dll
-/home/cosmin/git/renode/lib/Packet.Net/PacketDotNet/obj/Release/PacketDotNet.dll
+/home/tock/renode-iot/lib/Packet.Net/PacketDotNet/obj/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/tock/renode-iot/lib/Packet.Net/PacketDotNet/bin/Release/PacketDotNet.dll
+/home/tock/renode-iot/lib/Packet.Net/PacketDotNet/obj/Release/PacketDotNet.dll

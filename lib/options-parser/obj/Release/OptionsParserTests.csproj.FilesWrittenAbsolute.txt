@@ -1,8 +1,8 @@
-/home/cosmin/git/renode/lib/options-parser/obj/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/cosmin/git/renode/lib/options-parser/bin/Release/OptionsParserTests.dll.mdb
-/home/cosmin/git/renode/lib/options-parser/bin/Release/OptionsParserTests.dll
-/home/cosmin/git/renode/lib/options-parser/obj/Release/OptionsParserTests.dll
-/home/cosmin/git/renode/lib/options-parser/obj/Release/OptionsParserTests.dll.mdb
-/home/cosmin/git/renode/lib/options-parser/bin/Release/nunit.framework.dll
-/home/cosmin/git/renode/lib/options-parser/bin/Release/OptionsParser.dll
-/home/cosmin/git/renode/lib/options-parser/bin/Release/OptionsParser.dll.mdb
+/home/tock/renode-iot/lib/options-parser/obj/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/tock/renode-iot/lib/options-parser/bin/Release/OptionsParserTests.pdb
+/home/tock/renode-iot/lib/options-parser/bin/Release/OptionsParserTests.dll
+/home/tock/renode-iot/lib/options-parser/obj/Release/OptionsParserTests.dll
+/home/tock/renode-iot/lib/options-parser/obj/Release/OptionsParserTests.pdb
+/home/tock/renode-iot/lib/options-parser/bin/Release/nunit.framework.dll
+/home/tock/renode-iot/lib/options-parser/bin/Release/OptionsParser.dll
+/home/tock/renode-iot/lib/options-parser/bin/Release/OptionsParser.pdb

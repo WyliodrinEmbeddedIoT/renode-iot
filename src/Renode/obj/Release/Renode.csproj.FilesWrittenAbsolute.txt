@@ -1,9 +1,8 @@
-/home/cosmin/git/renode/src/Renode/obj/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/cosmin/git/renode/src/Renode/obj/Release/Antmicro.Renode.Resources.renode_nobg.ico
-/home/cosmin/git/renode/src/Renode/obj/Release/Antmicro.Renode.Resources.logo.png
-/home/cosmin/git/renode/src/Renode/obj/Release/Antmicro.Renode.Resources.RobotoMono-Regular.ttf
-/home/cosmin/git/renode/output/bin/Release/Xwt.Gtk.dll.config
-/home/cosmin/git/renode/output/bin/Release/Renode.exe.mdb
-/home/cosmin/git/renode/output/bin/Release/Renode.exe
-/home/cosmin/git/renode/src/Renode/obj/Release/Renode.exe
-/home/cosmin/git/renode/src/Renode/obj/Release/Renode.exe.mdb
+/home/tock/renode-iot/src/Renode/obj/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/tock/renode-iot/src/Renode/obj/Release/Antmicro.Renode.Resources.renode_nobg.ico
+/home/tock/renode-iot/src/Renode/obj/Release/Antmicro.Renode.Resources.logo.png
+/home/tock/renode-iot/src/Renode/obj/Release/Antmicro.Renode.Resources.RobotoMono-Regular.ttf
+/home/tock/renode-iot/output/bin/Release/Renode.pdb
+/home/tock/renode-iot/output/bin/Release/Renode.exe
+/home/tock/renode-iot/src/Renode/obj/Release/Renode.exe
+/home/tock/renode-iot/src/Renode/obj/Release/Renode.pdb

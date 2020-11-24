@@ -1,6 +1,0 @@
-/home/cosmin/git/renode/lib/Packet.Net/PacketDotNet/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/cosmin/git/renode/lib/Packet.Net/PacketDotNet/bin/Debug/PacketDotNet.dll.mdb
-/home/cosmin/git/renode/lib/Packet.Net/PacketDotNet/bin/Debug/PacketDotNet.dll
-/home/cosmin/git/renode/lib/Packet.Net/PacketDotNet/obj/Debug/PacketDotNet.dll
-/home/cosmin/git/renode/lib/Packet.Net/PacketDotNet/obj/Debug/PacketDotNet.dll.mdb
-/home/cosmin/git/renode/lib/Packet.Net/PacketDotNet/bin/Debug/log4net.dll

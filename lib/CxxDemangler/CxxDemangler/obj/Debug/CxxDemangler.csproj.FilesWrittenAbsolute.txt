@@ -1,5 +1,0 @@
-/home/cosmin/git/renode/lib/CxxDemangler/CxxDemangler/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/cosmin/git/renode/lib/CxxDemangler/CxxDemangler/bin/Debug/CxxDemangler.dll.mdb
-/home/cosmin/git/renode/lib/CxxDemangler/CxxDemangler/bin/Debug/CxxDemangler.dll
-/home/cosmin/git/renode/lib/CxxDemangler/CxxDemangler/obj/Debug/CxxDemangler.dll
-/home/cosmin/git/renode/lib/CxxDemangler/CxxDemangler/obj/Debug/CxxDemangler.dll.mdb

@@ -5,171 +5,171 @@
     </assembly>
     <members>
         <member name="T:Antmicro.Migrant.ConstructorAttribute">
-             <summary>
-             When this attribute is placed on a field, such field is filled with
-             the newly constructed object of a same type as field. To construct
-             such object, the parameters given in a attribute are used.
-             </summary>
-            </member>
+            <summary>
+            When this attribute is placed on a field, such field is filled with
+            the newly constructed object of a same type as field. To construct
+            such object, the parameters given in a attribute are used.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.ConstructorAttribute.#ctor(System.Object[])">
-             <summary>
-             Initializes attribute with given parameters which will be later passed to the
-             constructor.
-             </summary>
-             <param name="parameters">
-             Parameters.
-             </param>
-            </member>
+            <summary>
+            Initializes attribute with given parameters which will be later passed to the
+            constructor.
+            </summary>
+            <param name='parameters'>
+            Parameters.
+            </param>
+        </member>
         <member name="P:Antmicro.Migrant.ConstructorAttribute.Parameters">
-             <summary>
-             Parameters passed to the attribute.
-             </summary>
-            </member>
+            <summary>
+            Parameters passed to the attribute.
+            </summary>
+        </member>
         <member name="T:Antmicro.Migrant.Consts">
-             <summary>
-             Contains universal constants used by the serializer.
-             </summary>
-            </member>
+            <summary>
+            Contains universal constants used by the serializer.
+            </summary>
+        </member>
         <member name="F:Antmicro.Migrant.Consts.NullObjectId">
-             <summary>
-             When used in a place where type id or object id is expected, it indicates
-             the null reference.
-             </summary>
-            </member>
+            <summary>
+            When used in a place where type id or object id is expected, it indicates
+            the null reference.
+            </summary>
+        </member>
         <member name="T:Antmicro.Migrant.ISpeciallySerializable">
-             <summary>
-             When implemented, its method are used by serializer to save or load the state of
-             the object. Implementing class must contain a parameterless constructor which is
-             invoked during deserialization, immediately before calling the <see cref="M:Antmicro.Migrant.ISpeciallySerializable.Load(Antmicro.Migrant.PrimitiveReader)" />
-             method.
-             </summary>
-            </member>
+            <summary>
+            When implemented, its method are used by serializer to save or load the state of
+            the object. Implementing class must contain a parameterless constructor which is
+            invoked during deserialization, immediately before calling the <see cref="M:Antmicro.Migrant.ISpeciallySerializable.Load(Antmicro.Migrant.PrimitiveReader)" />
+            method.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.ISpeciallySerializable.Load(Antmicro.Migrant.PrimitiveReader)">
-             <summary>
-             Invoked by the serializer immediately after construction of object (using
-             parameterless constructor). Should restore the state of the object, previously
-             stored using the <see cref="M:Antmicro.Migrant.ISpeciallySerializable.Save(Antmicro.Migrant.PrimitiveWriter)" /> method.
-             </summary>
-             <param name="reader">
-             The reader which should be used to read the previously written data.
-             </param>
-             <remarks>
-             This method must read the number of bytes that were earlier written. Otherwise
-             the <see cref="T:System.InvalidOperationException" /> is thrown.
-             </remarks>
-            </member>
+            <summary>
+            Invoked by the serializer immediately after construction of object (using
+            parameterless constructor). Should restore the state of the object, previously
+            stored using the <see cref="M:Antmicro.Migrant.ISpeciallySerializable.Save(Antmicro.Migrant.PrimitiveWriter)" /> method.
+            </summary>
+            <param name='reader'>
+            The reader which should be used to read the previously written data.
+            </param>
+            <remarks>
+            This method must read the number of bytes that were earlier written. Otherwise
+            the <see cref="T:System.InvalidOperationException" /> is thrown.
+            </remarks>
+        </member>
         <member name="M:Antmicro.Migrant.ISpeciallySerializable.Save(Antmicro.Migrant.PrimitiveWriter)">
-             <summary>
-             Invoked by the serializer during serialization. Should store the state of the
-             object which can be later read using the <see cref="M:Antmicro.Migrant.ISpeciallySerializable.Load(Antmicro.Migrant.PrimitiveReader)" /> method.
-             </summary>
-             <param name="writer">
-             Writer used to save the state of the object.
-             </param>
-            </member>
+            <summary>
+            Invoked by the serializer during serialization. Should store the state of the
+            object which can be later read using the <see cref="M:Antmicro.Migrant.ISpeciallySerializable.Load(Antmicro.Migrant.PrimitiveReader)" /> method.
+            </summary>
+            <param name='writer'>
+            Writer used to save the state of the object.
+            </param>
+        </member>
         <member name="T:Antmicro.Migrant.ObjectIdentifier">
-             <summary>
-             Gives consecutive, unique identifiers for presented objects during its lifetime.
-             Can also be used to retrive an object by its ID.
-             </summary>
-             <remarks>
-             The first returned id is 0. For given object, if it was presented to the class
-             earlier, the previously returned identificator is returned again. Note that the
-             objects presented to class are remembered, so they will not be collected until
-             the <c>ObjectIdentifier</c> lives.
-             </remarks>
-            </member>
+            <summary>
+            Gives consecutive, unique identifiers for presented objects during its lifetime.
+            Can also be used to retrive an object by its ID.
+            </summary>
+            <remarks>
+            The first returned id is 0. For given object, if it was presented to the class
+            earlier, the previously returned identificator is returned again. Note that the
+            objects presented to class are remembered, so they will not be collected until
+            the <c>ObjectIdentifier</c> lives.
+            </remarks>
+        </member>
         <member name="M:Antmicro.Migrant.ObjectIdentifier.#ctor">
-             <summary>
-             Initializes a new instance of the <see cref="T:Antmicro.Migrant.ObjectIdentifier" /> class.
-             </summary>
-            </member>
+            <summary>
+            Initializes a new instance of the <see cref="T:Antmicro.Migrant.ObjectIdentifier"/> class.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.ObjectIdentifier.#ctor(Antmicro.Migrant.ObjectIdentifierContext)">
-             <summary>
-             Initializes a new instance of the <see cref="T:Antmicro.Migrant.ObjectIdentifier" /> class, reusing given context.
-             </summary>
-             <param name="context">Context to reuse.</param>
-            </member>
+            <summary>
+            Initializes a new instance of the <see cref="T:Antmicro.Migrant.ObjectIdentifier"/> class, reusing given context.
+            </summary>
+            <param name="context">Context to reuse.</param>
+        </member>
         <member name="M:Antmicro.Migrant.ObjectIdentifier.GetContext">
-             <summary>
-             Gets the context of object identifier that can be used for open stream serialization.
-             </summary>
-            </member>
+            <summary>
+            Gets the context of object identifier that can be used for open stream serialization.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.ObjectIdentifier.GetId(System.Object,System.Boolean@)">
-             <summary>
-             For a given object, returns its unique ID. The new ID is used if object was
-             not presented to this class earlier, otherwise the previously returned is used.
-             </summary>
-             <returns>
-             The object's unique ID.
-             </returns>
-             <param name="o">
-             An object to give unique ID for.
-             </param>
-             <param name="isNew">
-             Out parameter specifying if returned id has just been generated.
-             </param>
-            </member>
+            <summary>
+            For a given object, returns its unique ID. The new ID is used if object was
+            not presented to this class earlier, otherwise the previously returned is used.
+            </summary>
+            <returns>
+            The object's unique ID.
+            </returns>
+            <param name='o'>
+            An object to give unique ID for.
+            </param>
+            <param name='isNew'>
+            Out parameter specifying if returned id has just been generated.
+            </param>
+        </member>
         <member name="M:Antmicro.Migrant.ObjectIdentifier.GetId(System.Object)">
-             <summary>
-             For a given object, returns its unique ID. The new ID is used if object was
-             not presented to this class earlier, otherwise the previously returned is used.
-             </summary>
-             <returns>
-             The object's unique ID.
-             </returns>
-             <param name="o">
-             An object to give unique ID for.
-             </param>
-            </member>
+            <summary>
+            For a given object, returns its unique ID. The new ID is used if object was
+            not presented to this class earlier, otherwise the previously returned is used.
+            </summary>
+            <returns>
+            The object's unique ID.
+            </returns>
+            <param name='o'>
+            An object to give unique ID for.
+            </param>
+        </member>
         <member name="M:Antmicro.Migrant.ObjectIdentifier.SetIdentifierForObject(System.Object,System.Int32)">
-             <summary>
-             Sets new identifier for object.
-             
-             REMARK: Setting new mapping of object to id 
-             does not remove the old one. As a reuslt,
-             after this operation asking for id of old
-             object and new object results in returing
-             the same identifier. This behaviour is intended
-             to support surrogated objects.
-             
-             </summary>
-             <returns>The new identifier for object.</returns>
-             <param name="o">Object</param>
-             <param name="id">Identifier</param>
-            </member>
+            <summary>
+            Sets new identifier for object.
+            
+            REMARK: Setting new mapping of object to id 
+            does not remove the old one. As a reuslt,
+            after this operation asking for id of old
+            object and new object results in returing
+            the same identifier. This behaviour is intended
+            to support surrogated objects.
+            
+            </summary>
+            <returns>The new identifier for object.</returns>
+            <param name="o">Object</param>
+            <param name="id">Identifier</param>
+        </member>
         <member name="M:Antmicro.Migrant.ObjectIdentifier.GetObject(System.Int32)">
-             <summary>
-             For an ID which was previously returned by the <see cref="M:Antmicro.Migrant.ObjectIdentifier.GetId(System.Object,System.Boolean@)" /> method,
-             returns an object for which this ID was generated.
-             </summary>
-             <returns>
-             The object for which given ID was returned.
-             </returns>
-             <param name="id">
-             The unique ID, previously returned by the <see cref="M:Antmicro.Migrant.ObjectIdentifier.GetId(System.Object,System.Boolean@)" /> method.
-             </param>
-            </member>
+            <summary>
+            For an ID which was previously returned by the <see cref="M:Antmicro.Migrant.ObjectIdentifier.GetId(System.Object,System.Boolean@)" /> method,
+            returns an object for which this ID was generated.
+            </summary>
+            <returns>
+            The object for which given ID was returned.
+            </returns>
+            <param name='id'>
+            The unique ID, previously returned by the <see cref="M:Antmicro.Migrant.ObjectIdentifier.GetId(System.Object,System.Boolean@)" /> method.
+            </param>
+        </member>
         <member name="P:Antmicro.Migrant.ObjectIdentifier.Item(System.Int32)">
-             <summary>
-             For an ID which was previously returned by the <see cref="M:Antmicro.Migrant.ObjectIdentifier.GetId(System.Object,System.Boolean@)" /> method,
-             returns an object for which this ID was generated.
-             </summary>
-             <param name="id">
-             The unique ID, previously returned by the <see cref="M:Antmicro.Migrant.ObjectIdentifier.GetId(System.Object,System.Boolean@)" /> method.
-             </param>
-            </member>
+            <summary>
+            For an ID which was previously returned by the <see cref="M:Antmicro.Migrant.ObjectIdentifier.GetId(System.Object,System.Boolean@)" /> method,
+            returns an object for which this ID was generated.
+            </summary>
+            <param name='id'>
+            The unique ID, previously returned by the <see cref="M:Antmicro.Migrant.ObjectIdentifier.GetId(System.Object,System.Boolean@)" /> method.
+            </param>
+        </member>
         <member name="P:Antmicro.Migrant.ObjectIdentifier.Count">
-             <summary>
-             Gets the count of the unique objects presented to class. It is also
-             the first unoccupied ID which will be returned for the new object.
-             </summary>
-            </member>
+            <summary>
+            Gets the count of the unique objects presented to class. It is also
+            the first unoccupied ID which will be returned for the new object.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.ObjectIdentifier.Clear">
-             <summary>
-             Clears internal elements.
-             </summary>
-            </member>
+            <summary>
+            Clears internal elements.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.ObjectReader.ReadObjectInnerUsingReflection(Antmicro.Migrant.ObjectReader,System.Type,System.Int32)">
              <summary>
              Reads the object using reflection.
@@ -179,7 +179,7 @@
              <param name="objectReader">Object reader</param>
              <param name="actualType">Type of object to deserialize</param>
              <param name="objectId">Identifier of object to deserialize</param>
-            </member>
+        </member>
         <member name="M:Antmicro.Migrant.ObjectWriter.WriteObjectUsingReflection(Antmicro.Migrant.ObjectWriter,System.Object)">
              <summary>
              Writes the object using reflection.
@@ -188,564 +188,564 @@
              </summary>
              <param name="objectWriter">Object writer's object</param>
              <param name="o">Object to serialize</param>
-            </member>
+        </member>
         <member name="T:Antmicro.Migrant.PrimitiveReader">
-             <summary>
-             Provides the mechanism for reading primitive values from a stream.
-             </summary>
-             <remarks>
-             Can be used as a replacement for the <see cref="T:System.IO.BinaryReader" /> . Provides
-             more compact output and reads no more data from the stream than requested. Although
-             the underlying format is not specified at this point, it is guaranteed to be consistent with
-             <see cref="T:Antmicro.Migrant.PrimitiveWriter" />. Reader has to be disposed after used,
-             otherwise stream position corruption can occur. Reader does not possess the stream
-             and does not close it after dispose.
-             </remarks>
-            </member>
+            <summary>
+            Provides the mechanism for reading primitive values from a stream.
+            </summary>
+            <remarks>
+            Can be used as a replacement for the <see cref="T:System.IO.BinaryReader" /> . Provides
+            more compact output and reads no more data from the stream than requested. Although
+            the underlying format is not specified at this point, it is guaranteed to be consistent with
+            <see cref="T:Antmicro.Migrant.PrimitiveWriter" />. Reader has to be disposed after used,
+            otherwise stream position corruption can occur. Reader does not possess the stream
+            and does not close it after dispose.
+            </remarks>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveReader.#ctor(System.IO.Stream,System.Boolean)">
-             <summary>
-             Initializes a new instance of the <see cref="T:Antmicro.Migrant.PrimitiveReader" /> class.
-             </summary>
-             <param name="stream">
-             The underlying stream which will be used to read data. Has to be readable.
-             </param>
-             <param name="buffered"> 
-             True if reads should assume that corresponding PrimitiveWriter used buffering. False otherwise,
-             then no read prefetching or padding is used. Note that corresponding PrimitiveWriter always have
-             to have the same value for this parameter.
-             </param>
-            </member>
+            <summary>
+            Initializes a new instance of the <see cref="T:Antmicro.Migrant.PrimitiveReader" /> class.
+            </summary>
+            <param name='stream'>
+            The underlying stream which will be used to read data. Has to be readable.
+            </param>
+            <param name='buffered'> 
+            True if reads should assume that corresponding PrimitiveWriter used buffering. False otherwise,
+            then no read prefetching or padding is used. Note that corresponding PrimitiveWriter always have
+            to have the same value for this parameter.
+            </param>
+        </member>
         <member name="P:Antmicro.Migrant.PrimitiveReader.Position">
-             <summary>
-             Gets the current position.
-             </summary>
-             <value>
-             The position, which is the number of bytes read after this object was
-             constructed.
-             </value>
-            </member>
+            <summary>
+            Gets the current position.
+            </summary>
+            <value>
+            The position, which is the number of bytes read after this object was
+            constructed.
+            </value>
+        </member>
         <member name="P:Antmicro.Migrant.PrimitiveReader.IsBuffered">
-             <summary>
-             Gets current buffering configuration.
-             </summary>
-             <value><c>true</c> if this the data read from stream is buffered; otherwise, <c>false</c>.</value>
-            </member>
+            <summary>
+            Gets current buffering configuration.
+            </summary>
+            <value><c>true</c> if this the data read from stream is buffered; otherwise, <c>false</c>.</value>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveReader.ReadDouble">
-             <summary>
-             Reads and returns <see cref="T:System.Double" />.
-             </summary>
-            </member>
+            <summary>
+            Reads and returns <see cref="T:System.Double" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveReader.ReadSingle">
-             <summary>
-             Reads and returns <see cref="T:System.Single" />.
-             </summary>
-            </member>
+            <summary>
+            Reads and returns <see cref="T:System.Single" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveReader.ReadDateTime">
-             <summary>
-             Reads and returns <see cref="T:System.DateTime" />.
-             </summary>
-            </member>
+            <summary>
+            Reads and returns <see cref="T:System.DateTime" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveReader.ReadTimeSpan">
-             <summary>
-             Reads and returns <see cref="T:System.TimeSpan" />.
-             </summary>
-            </member>
+            <summary>
+            Reads and returns <see cref="T:System.TimeSpan" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveReader.ReadByte">
-             <summary>
-             Reads and returns <see cref="T:System.Byte" />.
-             </summary>
-            </member>
+            <summary>
+            Reads and returns <see cref="T:System.Byte" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveReader.ReadSByte">
-             <summary>
-             Reads and returns <see cref="T:System.SByte" />.
-             </summary>
-            </member>
+            <summary>
+            Reads and returns <see cref="T:System.SByte" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveReader.ReadInt16">
-             <summary>
-             Reads and returns <see cref="T:System.Int16" />.
-             </summary>
-            </member>
+            <summary>
+            Reads and returns <see cref="T:System.Int16" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveReader.ReadUInt16">
-             <summary>
-             Reads and returns <see cref="T:System.UInt16" />.
-             </summary>
-            </member>
+            <summary>
+            Reads and returns <see cref="T:System.UInt16" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveReader.ReadInt32">
-             <summary>
-             Reads and returns <see cref="T:System.Int32" />.
-             </summary>
-            </member>
+            <summary>
+            Reads and returns <see cref="T:System.Int32" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveReader.ReadUInt32">
-             <summary>
-             Reads and returns <see cref="T:System.UInt32" />.
-             </summary>
-            </member>
+            <summary>
+            Reads and returns <see cref="T:System.UInt32" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveReader.ReadInt64">
-             <summary>
-             Reads and returns <see cref="T:System.Int64" />.
-             </summary>
-            </member>
+            <summary>
+            Reads and returns <see cref="T:System.Int64" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveReader.ReadUInt64">
-             <summary>
-             Reads and returns <see cref="T:System.UInt64" />.
-             </summary>
-            </member>
+            <summary>
+            Reads and returns <see cref="T:System.UInt64" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveReader.ReadChar">
-             <summary>
-             Reads and returns <see cref="T:System.Char" />.
-             </summary>
-            </member>
+            <summary>
+            Reads and returns <see cref="T:System.Char" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveReader.ReadBoolean">
-             <summary>
-             Reads and returns <see cref="T:System.Boolean" />.
-             </summary>
-            </member>
+            <summary>
+            Reads and returns <see cref="T:System.Boolean" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveReader.ReadGuid">
-             <summary>
-             Reads and returns <see cref="T:System.Guid" />.
-             </summary>
-            </member>
+            <summary>
+            Reads and returns <see cref="T:System.Guid" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveReader.ReadString">
-             <summary>
-             Reads and returns string.
-             </summary>
-            </member>
+            <summary>
+            Reads and returns string.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveReader.ReadDecimal">
-             <summary>
-             Reads the <see cref="T:System.Decimal" /> .
-             </summary>
-            </member>
+            <summary>
+            Reads the <see cref="T:System.Decimal"/> .
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveReader.ReadBytes(System.Int32)">
-             <summary>
-             Reads the given number of bytes.
-             </summary>
-             <returns>
-             The array holding read bytes.
-             </returns>
-             <param name="count">
-             Number of bytes to read.
-             </param>
-            </member>
+            <summary>
+            Reads the given number of bytes.
+            </summary>
+            <returns>
+            The array holding read bytes.
+            </returns>
+            <param name='count'>
+            Number of bytes to read.
+            </param>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveReader.CopyTo(System.IO.Stream,System.Int64)">
-             <summary>
-             Copies given number of bytes to a given stream.
-             </summary>
-             <param name="destination">
-             Writeable stream to which data will be copied.
-             </param>
-             <param name="howMuch">
-             The number of bytes which will be copied to the destination stream.
-             </param>
-            </member>
+            <summary>
+            Copies given number of bytes to a given stream.
+            </summary>
+            <param name='destination'>
+            Writeable stream to which data will be copied.
+            </param>
+            <param name='howMuch'>
+            The number of bytes which will be copied to the destination stream.
+            </param>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveReader.Dispose">
-             <summary>
-             After this call stream's position is updated to match the padding used by <see cref="T:Antmicro.Migrant.PrimitiveWriter" />.
-             It is needed to be called if one expects consecutive reads (of data written previously by consecutive writes). It is not necessary
-             to call this method when buffering is not used.
-             </summary>
-             <remarks>
-             Call <see cref="M:Antmicro.Migrant.PrimitiveReader.Dispose" /> when you are finished using the <see cref="T:Antmicro.Migrant.PrimitiveReader" />. The
-             <see cref="M:Antmicro.Migrant.PrimitiveReader.Dispose" /> method leaves the <see cref="T:Antmicro.Migrant.PrimitiveReader" /> in an unusable state. After
-             calling <see cref="M:Antmicro.Migrant.PrimitiveReader.Dispose" />, you must release all references to the
-             <see cref="T:Antmicro.Migrant.PrimitiveReader" /> so the garbage collector can reclaim the memory that the
-             <see cref="T:Antmicro.Migrant.PrimitiveReader" /> was occupying.
-             </remarks>
-            </member>
+            <summary>
+            After this call stream's position is updated to match the padding used by <see cref="T:Antmicro.Migrant.PrimitiveWriter"/>.
+            It is needed to be called if one expects consecutive reads (of data written previously by consecutive writes). It is not necessary
+            to call this method when buffering is not used.
+            </summary>
+            <remarks>
+            Call <see cref="M:Antmicro.Migrant.PrimitiveReader.Dispose"/> when you are finished using the <see cref="T:Antmicro.Migrant.PrimitiveReader"/>. The
+            <see cref="M:Antmicro.Migrant.PrimitiveReader.Dispose"/> method leaves the <see cref="T:Antmicro.Migrant.PrimitiveReader"/> in an unusable state. After
+            calling <see cref="M:Antmicro.Migrant.PrimitiveReader.Dispose"/>, you must release all references to the
+            <see cref="T:Antmicro.Migrant.PrimitiveReader"/> so the garbage collector can reclaim the memory that the
+            <see cref="T:Antmicro.Migrant.PrimitiveReader"/> was occupying.
+            </remarks>
+        </member>
         <member name="T:Antmicro.Migrant.PrimitiveWriter">
-             <summary>
-             Provides the mechanism for writing primitive values into a stream.
-             </summary>
-             <remarks>
-             Can be used as a replacement for the <see cref="T:System.IO.BinaryWriter" /> . Provides
-             more compact output and reads no more data from the stream than requested. Although
-             the underlying format is not specified at this point, it is guaranteed to be consistent with
-             <see cref="T:Antmicro.Migrant.PrimitiveReader" />. Writer has to be disposed after used,
-             otherwise stream position corruption and data loss can occur. Writer does not possess the
-             stream and does not close it after dispose.
-             </remarks>
-            </member>
+            <summary>
+            Provides the mechanism for writing primitive values into a stream.
+            </summary>
+            <remarks>
+            Can be used as a replacement for the <see cref="T:System.IO.BinaryWriter" /> . Provides
+            more compact output and reads no more data from the stream than requested. Although
+            the underlying format is not specified at this point, it is guaranteed to be consistent with
+            <see cref="T:Antmicro.Migrant.PrimitiveReader" />. Writer has to be disposed after used,
+            otherwise stream position corruption and data loss can occur. Writer does not possess the
+            stream and does not close it after dispose.
+            </remarks>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveWriter.#ctor(System.IO.Stream,System.Boolean)">
-             <summary>
-             Initializes a new instance of the <see cref="T:Antmicro.Migrant.PrimitiveWriter" /> class.
-             </summary>
-             <param name="stream">
-             The underlying stream which will be used to write data. Has to be writeable.
-             </param>
-             <param name="buffered">
-             True if writes should be buffered, false when they should be immediately passed to
-             the stream. With false also no final padding is used. Note that corresponding
-             PrimitiveReader has to use the same value for this parameter.
-             </param>
-            </member>
+            <summary>
+            Initializes a new instance of the <see cref="T:Antmicro.Migrant.PrimitiveWriter" /> class.
+            </summary>
+            <param name='stream'>
+            The underlying stream which will be used to write data. Has to be writeable.
+            </param>
+            <param name='buffered'>
+            True if writes should be buffered, false when they should be immediately passed to
+            the stream. With false also no final padding is used. Note that corresponding
+            PrimitiveReader has to use the same value for this parameter.
+            </param>
+        </member>
         <member name="P:Antmicro.Migrant.PrimitiveWriter.Position">
-             <summary>
-             Gets the current position.
-             </summary>
-             <value>
-             The position, which is the number of bytes written after this object was
-             constructed.
-             </value>
-            </member>
+            <summary>
+            Gets the current position.
+            </summary>
+            <value>
+            The position, which is the number of bytes written after this object was
+            constructed.
+            </value>
+        </member>
         <member name="P:Antmicro.Migrant.PrimitiveWriter.IsBuffered">
-             <summary>
-             Gets current buffering configuration.
-             </summary>
-             <value><c>true</c> if this the data written to stream is buffered; otherwise, <c>false</c>.</value>
-            </member>
+            <summary>
+            Gets current buffering configuration.
+            </summary>
+            <value><c>true</c> if this the data written to stream is buffered; otherwise, <c>false</c>.</value>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveWriter.Write(System.Double)">
-             <summary>
-             Writes the specified value of type <see cref="T:System.Double" />.
-             </summary>
-            </member>
+            <summary>
+            Writes the specified value of type <see cref="T:System.Double" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveWriter.Write(System.Single)">
-             <summary>
-             Writes the specified value of type <see cref="T:System.Single" />.
-             </summary>
-            </member>
+            <summary>
+            Writes the specified value of type <see cref="T:System.Single" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveWriter.Write(System.DateTime)">
-             <summary>
-             Writes the specified value of type <see cref="T:System.DateTime" />.
-             </summary>
-            </member>
+            <summary>
+            Writes the specified value of type <see cref="T:System.DateTime" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveWriter.Write(System.TimeSpan)">
-             <summary>
-             Writes the specified value of type <see cref="T:System.TimeSpan" />.
-             </summary>
-            </member>
+            <summary>
+            Writes the specified value of type <see cref="T:System.TimeSpan" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveWriter.Write(System.Byte)">
-             <summary>
-             Writes the specified value of type <see cref="T:System.Byte" />.
-             </summary>
-            </member>
+            <summary>
+            Writes the specified value of type <see cref="T:System.Byte" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveWriter.Write(System.SByte)">
-             <summary>
-             Writes the specified value of type <see cref="T:System.SByte" />.
-             </summary>
-            </member>
+            <summary>
+            Writes the specified value of type <see cref="T:System.SByte" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveWriter.Write(System.Int16)">
-             <summary>
-             Writes the specified value of type <see cref="T:System.Int16" />.
-             </summary>
-            </member>
+            <summary>
+            Writes the specified value of type <see cref="T:System.Int16" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveWriter.Write(System.UInt16)">
-             <summary>
-             Writes the specified value of type <see cref="T:System.UInt16" />.
-             </summary>
-            </member>
+            <summary>
+            Writes the specified value of type <see cref="T:System.UInt16" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveWriter.Write(System.Int32)">
-             <summary>
-             Writes the specified value of type <see cref="T:System.Int32" />.
-             </summary>
-            </member>
+            <summary>
+            Writes the specified value of type <see cref="T:System.Int32" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveWriter.Write(System.UInt32)">
-             <summary>
-             Writes the specified value of type <see cref="T:System.UInt32" />.
-             </summary>
-            </member>
+            <summary>
+            Writes the specified value of type <see cref="T:System.UInt32" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveWriter.Write(System.Int64)">
-             <summary>
-             Writes the specified value of type <see cref="T:System.Int64" />.
-             </summary>
-            </member>
+            <summary>
+            Writes the specified value of type <see cref="T:System.Int64" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveWriter.Write(System.UInt64)">
-             <summary>
-             Writes the specified value of type <see cref="T:System.UInt64" />.
-             </summary>
-            </member>
+            <summary>
+            Writes the specified value of type <see cref="T:System.UInt64" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveWriter.Write(System.Char)">
-             <summary>
-             Writes the specified value of type <see cref="T:System.Char" />.
-             </summary>
-            </member>
+            <summary>
+            Writes the specified value of type <see cref="T:System.Char" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveWriter.Write(System.Boolean)">
-             <summary>
-             Writes the specified value of type <see cref="T:System.Boolean" />.
-             </summary>
-            </member>
+            <summary>
+            Writes the specified value of type <see cref="T:System.Boolean" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveWriter.Write(System.Guid)">
-             <summary>
-             Writes the specified value of type <see cref="T:System.Guid" />.
-             </summary>
-            </member>
+            <summary>
+            Writes the specified value of type <see cref="T:System.Guid" />.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveWriter.Write(System.String)">
-             <summary>
-             Writes the specified string.
-             </summary>
-            </member>
+            <summary>
+            Writes the specified string.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveWriter.Write(System.Decimal)">
-             <summary>
-             Writes the specified <see cref="T:System.Decimal" /> .
-             </summary>
-            </member>
+            <summary>
+            Writes the specified <see cref="T:System.Decimal"/> .
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveWriter.Write(System.Byte[])">
-             <summary>
-             Writes the specified bytes array.
-             </summary>
-             <param name="bytes">
-             The array which content will be written.
-             </param>
-            </member>
+            <summary>
+            Writes the specified bytes array.
+            </summary>
+            <param name='bytes'>
+            The array which content will be written.
+            </param>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveWriter.Write(System.Byte[],System.Int32,System.Int32)">
-             <summary>
-             Write the specified bytes array, starting at offset and writing count from it.
-             </summary>
-             <param name="bytes">The array which is a source to write.</param>
-             <param name="offset">Index of the array to start writing at.</param>
-             <param name="count">Total bytes to write.</param>
-            </member>
+            <summary>
+            Write the specified bytes array, starting at offset and writing count from it.
+            </summary>
+            <param name="bytes">The array which is a source to write.</param>
+            <param name="offset">Index of the array to start writing at.</param>
+            <param name="count">Total bytes to write.</param>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveWriter.CopyFrom(System.IO.Stream,System.Int64)">
-             <summary>
-             Copies given number of bytes from the source stream to the underlying stream.
-             </summary>
-             <param name="source">
-             Readable stream, from which data will be copied.
-             </param>
-             <param name="howMuch">
-             The amount of a data to copy in bytes.
-             </param>
-            </member>
+            <summary>
+            Copies given number of bytes from the source stream to the underlying stream.
+            </summary>
+            <param name='source'>
+            Readable stream, from which data will be copied.
+            </param>
+            <param name='howMuch'>
+            The amount of a data to copy in bytes.
+            </param>
+        </member>
         <member name="M:Antmicro.Migrant.PrimitiveWriter.Dispose">
-             <summary>
-             Flushes the buffer and pads the stream with sufficient amount of data to be compatible 
-             with the <see cref="T:Antmicro.Migrant.PrimitiveReader" />. It is not necessary to call this method
-             when buffering is not used.
-             </summary>
-             <remarks>
-             Call <see cref="M:Antmicro.Migrant.PrimitiveWriter.Dispose" /> when you are finished using the <see cref="T:Antmicro.Migrant.PrimitiveWriter" />. The
-             <see cref="M:Antmicro.Migrant.PrimitiveWriter.Dispose" /> method leaves the <see cref="T:Antmicro.Migrant.PrimitiveWriter" /> in an unusable state. After
-             calling <see cref="M:Antmicro.Migrant.PrimitiveWriter.Dispose" />, you must release all references to the
-             <see cref="T:Antmicro.Migrant.PrimitiveWriter" /> so the garbage collector can reclaim the memory that the
-             <see cref="T:Antmicro.Migrant.PrimitiveWriter" /> was occupying.
-             </remarks>
-            </member>
+            <summary>
+            Flushes the buffer and pads the stream with sufficient amount of data to be compatible 
+            with the <see cref="T:Antmicro.Migrant.PrimitiveReader" />. It is not necessary to call this method
+            when buffering is not used.
+            </summary>
+            <remarks>
+            Call <see cref="M:Antmicro.Migrant.PrimitiveWriter.Dispose"/> when you are finished using the <see cref="T:Antmicro.Migrant.PrimitiveWriter"/>. The
+            <see cref="M:Antmicro.Migrant.PrimitiveWriter.Dispose"/> method leaves the <see cref="T:Antmicro.Migrant.PrimitiveWriter"/> in an unusable state. After
+            calling <see cref="M:Antmicro.Migrant.PrimitiveWriter.Dispose"/>, you must release all references to the
+            <see cref="T:Antmicro.Migrant.PrimitiveWriter"/> so the garbage collector can reclaim the memory that the
+            <see cref="T:Antmicro.Migrant.PrimitiveWriter"/> was occupying.
+            </remarks>
+        </member>
         <member name="T:Antmicro.Migrant.Serializer">
-             <summary>
-             Provides the mechanism for binary serialization and deserialization of objects.
-             </summary>
-             <remarks>
-             Please consult the general serializer documentation to find the limitations
-             and constraints which serialized objects must fullfill.
-             </remarks>
-            </member>
+            <summary>
+            Provides the mechanism for binary serialization and deserialization of objects.
+            </summary>
+            <remarks>
+            Please consult the general serializer documentation to find the limitations
+            and constraints which serialized objects must fullfill.
+            </remarks>
+        </member>
         <member name="M:Antmicro.Migrant.Serializer.#ctor(Antmicro.Migrant.Customization.Settings)">
-             <summary>
-             Initializes a new instance of the <see cref="T:Antmicro.Migrant.Serializer" /> class.
-             </summary>
-             <param name="settings">
-             Serializer's settings, can be null or not given, in that case default settings are
-             used.
-             </param>
-            </member>
+            <summary>
+            Initializes a new instance of the <see cref="T:Antmicro.Migrant.Serializer"/> class.
+            </summary>
+            <param name='settings'>
+            Serializer's settings, can be null or not given, in that case default settings are
+            used.
+            </param>
+        </member>
         <member name="M:Antmicro.Migrant.Serializer.Serialize(System.Object,System.IO.Stream)">
-             <summary>
-             Serializes the specified object to a given stream.
-             </summary>
-             <param name="obj">
-             Object to serialize along with its references.
-             </param>
-             <param name="stream">
-             Stream to which the given object should be serialized. Has to be writeable.
-             </param>
-            </member>
+            <summary>
+            Serializes the specified object to a given stream.
+            </summary>
+            <param name='obj'>
+            Object to serialize along with its references.
+            </param>
+            <param name='stream'>
+            Stream to which the given object should be serialized. Has to be writeable.
+            </param>
+        </member>
         <member name="M:Antmicro.Migrant.Serializer.ObtainOpenStreamSerializer(System.IO.Stream)">
-             <summary>
-             Returns the open stream serializer, which can be used to do consecutive serializations
-             </summary>
-             <returns>The open stream serializer.</returns>
-             <param name="stream">Stream.</param>
-            </member>
+            <summary>
+            Returns the open stream serializer, which can be used to do consecutive serializations
+            </summary>
+            <returns>The open stream serializer.</returns>
+            <param name="stream">Stream.</param>
+        </member>
         <member name="M:Antmicro.Migrant.Serializer.ObtainOpenStreamDeserializer(System.IO.Stream)">
-             <summary>
-             Returns the open stream serializer, which can be used to do consecutive deserializations when
-             same technique was used to serialize data.
-             </summary>
-             <returns>The open stream deserializer.</returns>
-             <param name="stream">Stream.</param>
-            </member>
+            <summary>
+            Returns the open stream serializer, which can be used to do consecutive deserializations when
+            same technique was used to serialize data.
+            </summary>
+            <returns>The open stream deserializer.</returns>
+            <param name="stream">Stream.</param>
+        </member>
         <member name="M:Antmicro.Migrant.Serializer.ForSurrogate``1">
-             <summary>
-             Gives the ability to set callback providing object for surrogate of given type. The object will be provided instead of such
-             surrogate in the effect of deserialization.
-             </summary>
-             <returns>
-             Object letting you set the object for the given surrogate type.
-             </returns>
-             <typeparam name="TSurrogate">
-             The type for which callback will be invoked.
-             </typeparam>
-            </member>
+            <summary>
+            Gives the ability to set callback providing object for surrogate of given type. The object will be provided instead of such
+            surrogate in the effect of deserialization.
+            </summary>
+            <returns>
+            Object letting you set the object for the given surrogate type.
+            </returns>
+            <typeparam name='TSurrogate'>
+            The type for which callback will be invoked.
+            </typeparam>
+        </member>
         <member name="M:Antmicro.Migrant.Serializer.ForSurrogate(System.Type)">
-             <summary>
-             Gives the ability to set callback providing object for surrogate of given type. The object will be provided instead of such
-             surrogate in the effect of deserialization.
-             </summary>
-             <returns>
-             Object letting you set the object for the given surrogate type.
-             </returns>
-             <param name="type">
-             The type for which callback will be invoked.
-             </param>
-            </member>
+            <summary>
+            Gives the ability to set callback providing object for surrogate of given type. The object will be provided instead of such
+            surrogate in the effect of deserialization.
+            </summary>
+            <returns>
+            Object letting you set the object for the given surrogate type.
+            </returns>
+            <param name="type">
+            The type for which callback will be invoked.
+            </param>
+        </member>
         <member name="M:Antmicro.Migrant.Serializer.ForObject``1">
-             <summary>
-             Gives the ability to set callback providing surrogate for objects of given type. The surrogate will be serialized instead of
-             the object of that type.
-             </summary>
-             <returns>
-             Object letting you set the surrogate for the given type.
-             </returns>
-             <typeparam name="TObject">
-             The type for which callback will be invoked.
-             </typeparam>
-            </member>
+            <summary>
+            Gives the ability to set callback providing surrogate for objects of given type. The surrogate will be serialized instead of
+            the object of that type.
+            </summary>
+            <returns>
+            Object letting you set the surrogate for the given type.
+            </returns>
+            <typeparam name='TObject'>
+            The type for which callback will be invoked.
+            </typeparam>
+        </member>
         <member name="M:Antmicro.Migrant.Serializer.ForObject(System.Type)">
-             <summary>
-             Gives the ability to set callback providing surrogate for objects of given type. The surrogate will be serialized instead of
-             the object of that type.
-             </summary>
-             <returns>
-             Object letting you set the surrogate for the given type.
-             </returns>
-             <param name="type">
-             The type for which callback will be invoked.
-             </param>
-            </member>
+            <summary>
+            Gives the ability to set callback providing surrogate for objects of given type. The surrogate will be serialized instead of
+            the object of that type.
+            </summary>
+            <returns>
+            Object letting you set the surrogate for the given type.
+            </returns>
+            <param name="type">
+            The type for which callback will be invoked.
+            </param>
+        </member>
         <member name="M:Antmicro.Migrant.Serializer.Deserialize``1(System.IO.Stream)">
-             <summary>
-             Deserializes object from the specified stream.
-             </summary>
-             <param name="stream">
-             The stream to read data from. Must be readable.
-             </param>
-             <typeparam name="T">
-             The expected type of the deserialized object. The deserialized object must be
-             convertible to this type.
-             </typeparam>
-            </member>
+            <summary>
+            Deserializes object from the specified stream.
+            </summary>
+            <param name='stream'>
+            The stream to read data from. Must be readable.
+            </param>
+            <typeparam name='T'>
+            The expected type of the deserialized object. The deserialized object must be
+            convertible to this type.
+            </typeparam>
+        </member>
         <member name="M:Antmicro.Migrant.Serializer.TryDeserialize``1(System.IO.Stream,``0@)">
-             <summary>
-             Tries to deserialize object from specified stream.
-             </summary>
-             <returns>Operation result status.</returns>
-             <param name="stream">
-             The stream to read data from. Must be readable.
-             </param>
-             <param name="obj">Deserialized object.</param>
-             <typeparam name="T">
-             The expected type of the deserialized object. The deserialized object must be
-             convertible to this type.
-             </typeparam>
-            </member>
+            <summary>
+            Tries to deserialize object from specified stream.
+            </summary>
+            <returns>Operation result status.</returns>
+            <param name="stream">
+            The stream to read data from. Must be readable.
+            </param>
+            <param name="obj">Deserialized object.</param>
+            <typeparam name="T">
+            The expected type of the deserialized object. The deserialized object must be
+            convertible to this type.
+            </typeparam>
+        </member>
         <member name="E:Antmicro.Migrant.Serializer.OnPreSerialization">
-             <summary>
-             Is invoked before serialization, once for every unique, serialized object. Provides this
-             object in its single parameter.
-             </summary>
-            </member>
+            <summary>
+            Is invoked before serialization, once for every unique, serialized object. Provides this
+            object in its single parameter.
+            </summary>
+        </member>
         <member name="E:Antmicro.Migrant.Serializer.OnPostSerialization">
-             <summary>
-             Is invoked after serialization, once for every unique, serialized object. Provides this
-             object in its single parameter.
-             </summary>
-            </member>
+            <summary>
+            Is invoked after serialization, once for every unique, serialized object. Provides this
+            object in its single parameter.
+            </summary>
+        </member>
         <member name="E:Antmicro.Migrant.Serializer.OnPostDeserialization">
-             <summary>
-             Is invoked before deserialization, once for every unique, serialized object. Provides this
-             object in its single parameter.
-             </summary>
-            </member>
+            <summary>
+            Is invoked before deserialization, once for every unique, serialized object. Provides this
+            object in its single parameter.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.Serializer.DeepClone``1(``0,Antmicro.Migrant.Customization.Settings)">
-             <summary>
-             Makes a deep copy of a given object using the serializer.
-             </summary>
-             <returns>
-             The deep copy of a given object.
-             </returns>
-             <param name="toClone">
-             The object to make a deep copy of.
-             </param>
-             <param name="settings">
-             Settings used for serializer which does deep clone.
-             </param>
-            </member>
+            <summary>
+            Makes a deep copy of a given object using the serializer.
+            </summary>
+            <returns>
+            The deep copy of a given object.
+            </returns>
+            <param name='toClone'>
+            The object to make a deep copy of.
+            </param>
+            <param name='settings'>
+            Settings used for serializer which does deep clone.
+            </param>
+        </member>
         <member name="T:Antmicro.Migrant.Serializer.BaseObjectForSurrogateSetter">
-             <summary>
-             Base class for surrogate setter.
-             </summary>
-            </member>
+            <summary>
+            Base class for surrogate setter.
+            </summary>
+        </member>
         <member name="T:Antmicro.Migrant.Serializer.ObjectForSurrogateSetter`1">
-             <summary>
-             Lets you set a callback providing object for type of the surrogate given to method that provided
-             this object on a serializer that provided this object.
-             </summary>
-            </member>
+            <summary>
+            Lets you set a callback providing object for type of the surrogate given to method that provided
+            this object on a serializer that provided this object.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.Serializer.ObjectForSurrogateSetter`1.SetObject``1(System.Func{`0,``0})">
-             <summary>
-             Sets the callback proividing object for surrogate.
-             </summary>
-             <param name="callback">
-             Callback proividing object for surrogate. The callback can be null, in that case surrogate of the type
-             <typeparamref name="TSurrogate" /> will be deserialized as is even if there is an object for the more
-             general type.
-             </param>
-             <typeparam name="TObject">
-             The type of the object returned by callback.
-             </typeparam>
-            </member>
+            <summary>
+            Sets the callback proividing object for surrogate.
+            </summary>
+            <param name='callback'>
+            Callback proividing object for surrogate. The callback can be null, in that case surrogate of the type
+            <typeparamref name="TSurrogate" /> will be deserialized as is even if there is an object for the more
+            general type.
+            </param>
+            <typeparam name='TObject'>
+            The type of the object returned by callback.
+            </typeparam>
+        </member>
         <member name="T:Antmicro.Migrant.Serializer.ObjectForSurrogateSetter">
-             <summary>
-             Lets you set a callback providing object for type of the surrogate given to method that provided
-             this object on a serializer that provided this object.
-             </summary>
-            </member>
+            <summary>
+            Lets you set a callback providing object for type of the surrogate given to method that provided
+            this object on a serializer that provided this object.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.Serializer.ObjectForSurrogateSetter.SetObject(System.Func{System.Object,System.Object})">
-             <summary>
-             Sets the callback proividing object for surrogate.
-             </summary>
-             <param name="callback">
-             Callback proividing object for surrogate. The callback can be null, in that case surrogate of the
-             appropriate type will be deserialized as is even if there is an object for the more general type.
-             </param>
-            </member>
+            <summary>
+            Sets the callback proividing object for surrogate.
+            </summary>
+            <param name="callback">
+            Callback proividing object for surrogate. The callback can be null, in that case surrogate of the
+            appropriate type will be deserialized as is even if there is an object for the more general type.
+            </param>
+        </member>
         <member name="T:Antmicro.Migrant.Serializer.BaseSurrogateForObjectSetter">
-             <summary>
-             Base class for object setter.
-             </summary>
-            </member>
+            <summary>
+            Base class for object setter.
+            </summary>
+        </member>
         <member name="T:Antmicro.Migrant.Serializer.SurrogateForObjectSetter`1">
-             <summary>
-             Lets you set a callback providing surrogate for type of the object given to method that provided
-             this object on a serializer that provided this object.
-             </summary>
-            </member>
+            <summary>
+            Lets you set a callback providing surrogate for type of the object given to method that provided
+            this object on a serializer that provided this object.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.Serializer.SurrogateForObjectSetter`1.SetSurrogate``1(System.Func{`0,``0})">
-             <summary>
-             Sets the callback providing surrogate for object.
-             </summary>
-             <param name="callback">
-             Callback providing surrogate for object. The callback can be null, in that case object of the type
-             <typeparamref name="TObject" /> will be serialized as is even if there is a surrogate for the more
-             general type.
-             </param>
-             <typeparam name="TSurrogate">
-             The type of the object returned by callback.
-             </typeparam>
-            </member>
+            <summary>
+            Sets the callback providing surrogate for object.
+            </summary>
+            <param name='callback'>
+            Callback providing surrogate for object. The callback can be null, in that case object of the type
+            <typeparamref name="TObject" /> will be serialized as is even if there is a surrogate for the more
+            general type.
+            </param>
+            <typeparam name='TSurrogate'>
+            The type of the object returned by callback.
+            </typeparam>
+        </member>
         <member name="T:Antmicro.Migrant.Serializer.SurrogateForObjectSetter">
-             <summary>
-             Lets you set a callback providing surrogate for type of the object given to method that provided
-             this object on a serializer that provided this object.
-             </summary>
-            </member>
+            <summary>
+            Lets you set a callback providing surrogate for type of the object given to method that provided
+            this object on a serializer that provided this object.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.Serializer.SurrogateForObjectSetter.SetSurrogate(System.Func{System.Object,System.Object})">
-             <summary>
-             Sets the callback providing surrogate for object.
-             </summary>
-             <param name="callback">
-             Callback providing surrogate for object. The callback can be null, in that case object of the
-             appropriate type will be serialized as is even if there is a surrogate for the more general type.
-             </param>
-            </member>
+            <summary>
+            Sets the callback providing surrogate for object.
+            </summary>
+            <param name='callback'>
+            Callback providing surrogate for object. The callback can be null, in that case object of the
+            appropriate type will be serialized as is even if there is a surrogate for the more general type.
+            </param>
+        </member>
         <member name="M:Antmicro.Migrant.Serializer.SurrogateForObjectSetter.SetSurrogateGenericType(System.Type)">
              <summary>
              Sets the generic surrogate type that should be used to replace the original one.
@@ -754,405 +754,405 @@
              one and to has a constructor accepting one parameter of the original type.
              </summary>
              <param name="t">Generic type.</param>
-            </member>
+        </member>
         <member name="T:Antmicro.Migrant.Serializer.OpenStreamSerializer">
-             <summary>
-             Serializer that is attached to one stream and can do consecutive serializations that are aware of the data written
-             by previous ones.
-             </summary>
-            </member>
+            <summary>
+            Serializer that is attached to one stream and can do consecutive serializations that are aware of the data written
+            by previous ones.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.Serializer.OpenStreamSerializer.Serialize(System.Object)">
-             <summary>
-             Serialize the specified object.
-             </summary>
-             <param name="obj">Object.</param>
-            </member>
+            <summary>
+            Serialize the specified object.
+            </summary>
+            <param name="obj">Object.</param>
+        </member>
         <member name="M:Antmicro.Migrant.Serializer.OpenStreamSerializer.Dispose">
-             <summary>
-             Flushes the buffer and necessary padding. Not necessary when buffering is not used.
-             </summary>
-            </member>
+            <summary>
+            Flushes the buffer and necessary padding. Not necessary when buffering is not used.
+            </summary>
+        </member>
         <member name="T:Antmicro.Migrant.Serializer.OpenStreamDeserializer">
-             <summary>
-             Deserializer that is attached to one stream and can do consecutive deserializations that are aware of the data written
-             by previous ones.
-             </summary>
-            </member>
+            <summary>
+            Deserializer that is attached to one stream and can do consecutive deserializations that are aware of the data written
+            by previous ones.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.Serializer.OpenStreamDeserializer.Deserialize``1">
-             <summary>
-             Deserializes next object waiting in the stream.
-             </summary>
-             <typeparam name="T">The expected formal type of object to deserialize.</typeparam>
-            </member>
+            <summary>
+            Deserializes next object waiting in the stream.
+            </summary>
+            <typeparam name="T">The expected formal type of object to deserialize.</typeparam>
+        </member>
         <member name="M:Antmicro.Migrant.Serializer.OpenStreamDeserializer.DeserializeMany``1">
-             <summary>
-             Deserializes objects until end of the stream is reached. All objects have to be castable to T.
-             This method is only available when buffering is disabled.
-             </summary>
-             <returns>Lazy collection of deserialized objects.</returns>
-             <typeparam name="T">The expected type of object to deserialize.</typeparam>
-            </member>
+            <summary>
+            Deserializes objects until end of the stream is reached. All objects have to be castable to T.
+            This method is only available when buffering is disabled.
+            </summary>
+            <returns>Lazy collection of deserialized objects.</returns>
+            <typeparam name="T">The expected type of object to deserialize.</typeparam>
+        </member>
         <member name="M:Antmicro.Migrant.Serializer.OpenStreamDeserializer.Dispose">
-             <summary>
-             Reads leftover padding. Not necessary if buffering is not used.
-             </summary>
-            </member>
+            <summary>
+            Reads leftover padding. Not necessary if buffering is not used.
+            </summary>
+        </member>
         <member name="T:Antmicro.Migrant.TransientAttribute">
-             <summary>
-             When used on a class, it prevents the serialization of all fields which have the type of
-             that class. When used on a field, it prevents the serialization of this field.
-             </summary>
-            </member>
-        <member name="T:Antmicro.Migrant.Hooks.PreSerializationAttribute">
-             <summary>
-             Method decorated with this attribute will be invoked before serialization.
-             </summary>
-            </member>
-        <member name="T:Antmicro.Migrant.Customization.Settings">
-             <summary>
-             Contains serialization settings.
-             </summary>
-             	
-            </member>
-        <member name="P:Antmicro.Migrant.Customization.Settings.SerializationMethod">
-             <summary>
-             Gets the method used for serialization.
-             </summary>
-            </member>
-        <member name="P:Antmicro.Migrant.Customization.Settings.DeserializationMethod">
-             <summary>
-             Gets the method used for deserialization.
-             </summary>
-            </member>
-        <member name="P:Antmicro.Migrant.Customization.Settings.VersionTolerance">
-             <summary>
-             Specifies how much the layout of the serialized class can differ from the version
-             that is available when that data is deserialized.
-             </summary>
-            </member>
-        <member name="P:Antmicro.Migrant.Customization.Settings.SupportForISerializable">
-             <summary>
-             Specifies whether Migrant should use GetObjectData approach for serialization.
-             </summary>
-             <value><c>true</c> if support for ISerializable is active; otherwise, <c>false</c>.</value>
-            </member>
-        <member name="P:Antmicro.Migrant.Customization.Settings.SupportForIXmlSerializable">
-             <summary>
-             Specifies whether Migrant should utilize IXmlSerializable interface.
-             </summary>
-             <value><c>true</c> if support for IXmlSserializable is active; otherwise, <c>false</c>.</value>
-            </member>
-        <member name="P:Antmicro.Migrant.Customization.Settings.TreatCollectionAsUserObject">
-             <summary>&gt;
-             Gets the value of flag specifing if collection objects are to be deserialized without optimization (treated as normal user objects).
-             </summary>
-            </member>
-        <member name="P:Antmicro.Migrant.Customization.Settings.UseBuffering">
-             <summary>
-             Gets a value indicating whether buffering is used. Without buffering, all writes are going
-             directly to underlying and stream and no padding is used. Reads behave accordingly.
-             </summary>
-             <value><c>true</c> if buffering is used; otherwise, <c>false</c>.</value>
-            </member>
-        <member name="P:Antmicro.Migrant.Customization.Settings.ReferencePreservation">
-             <summary>
-             Tells serializer how to treat identity of objects between sessions of open
-             stream serialization.
-             </summary>
-            </member>
-        <member name="P:Antmicro.Migrant.Customization.Settings.DisableTypeStamping">
-             <summary>
-             Specifies if type stamping should be disabled in order to improve performance and limit output stream size.
-             </summary>
-             <value><c>true</c> if disable type stamping; otherwise, <c>false</c>.</value>
-            </member>
-        <member name="P:Antmicro.Migrant.Customization.Settings.ForceStampVerification">
-             <summary>
-             Specifies if type stamps should be compared even when GUID has not changed.
-             This is used in internal framework's tests.
-             </summary>
-            </member>
-        <member name="M:Antmicro.Migrant.Customization.Settings.#ctor(Antmicro.Migrant.Customization.Method,Antmicro.Migrant.Customization.Method,Antmicro.Migrant.Customization.VersionToleranceLevel,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,Antmicro.Migrant.Customization.ReferencePreservation,System.Boolean)">
-             <summary>
-             Initializes a new instance of the <see cref="T:Antmicro.Migrant.Customization.Settings" /> class.
-             </summary>
-             <param name="serializationMethod">
-             Method used for serialization.
-             </param>
-             <param name="deserializationMethod">
-             Method used for deserialization.
-             </param>
-             <param name="versionTolerance">
-             Specifies the possible level of difference between class layout when it was serialized and in the
-             moment of deserialization.
-             </param>
-             <param name="treatCollectionAsUserObject">
-             Specifies if collection objects are to be deserialized without optimization (treated as normal user objects).
-             </param>
-             <param name="supportForISerializable">
-             Specifies whether Migrant should use GetObjectData approach for serialization.
-             </param>
-             <param name="supportForIXmlSerializable"> 
-             Specifies whether Migrant should use xml serialization on objects implementing IXmlSerializable.
-             </param>
-             <param name="useBuffering"> 
-             True if buffering should be used, false if writes should directly go to the stream and reads should never read
-             data in advance. Disabling buffering also disables padding.
-             </param>
-             <param name="disableTypeStamping"> 
-             Specifies if type stamping should be disabled in order to improve performance and limit output stream size.
-             </param>
-             <param name="referencePreservation"> 
-             Tells serializer how to treat references between sessions of open stream serialization.
-             </param>
-             <param name="forceStampVerification">
-             Specifies if type stamps should be compared even when GUID has not changed.
-             </param>
-            </member>
-        <member name="M:Antmicro.Migrant.Customization.Settings.With(System.Nullable{Antmicro.Migrant.Customization.Method},System.Nullable{Antmicro.Migrant.Customization.Method},System.Nullable{Antmicro.Migrant.Customization.VersionToleranceLevel},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{Antmicro.Migrant.Customization.ReferencePreservation},System.Nullable{System.Boolean})">
-             <summary>
-             Initializes a new instance of the <see cref="T:Antmicro.Migrant.Customization.Settings" /> class.
-             </summary>
-             <param name="serializationMethod">
-             Method used for serialization.
-             </param>
-             <param name="deserializationMethod">
-             Method used for deserialization.
-             </param>
-             <param name="versionTolerance">
-             Specifies the possible level of difference between class layout when it was serialized and in the
-             moment of deserialization.
-             </param>
-             <param name="treatCollectionAsUserObject">
-             Specifies if collection objects are to be deserialized without optimization (treated as normal user objects).
-             </param>
-             <param name="supportForISerializable">
-             Specifies whether Migrant should use GetObjectData approach for serialization.
-             </param>
-             <param name="useBuffering"> 
-             True if buffering should be used, false if writes should directly go to the stream and reads should never read
-             data in advance. Disabling buffering also disables padding.
-             </param>
-             <param name="disableTypeStamping"> 
-             Specifies if type stamping should be disabled in order to improve performance and limit output stream size.
-             </param>
-             <param name="referencePreservation"> 
-             Tells serializer how to treat references between sessions of open stream serialization.
-             </param>
-             <param name="forceStampVerification">
-             Specifies if type stamps should be compared even when GUID has not changed.
-             </param>
-            </member>
-        <member name="T:Antmicro.Migrant.Customization.Method">
-             <summary>
-             Method of serialization or deserialization.
-             </summary>
-            </member>
-        <member name="F:Antmicro.Migrant.Customization.Method.Generated">
-             <summary>
-             (De)Serialization is done using write method generator. For any type which encountered for the first time, the methods to serialize it are
-             generated.
-             </summary>
-            </member>
-        <member name="F:Antmicro.Migrant.Customization.Method.Reflection">
-             <summary>
-             (De)Serialization is done directly using reflection.
-             </summary>
-            </member>
-        <member name="T:Antmicro.Migrant.Hooks.LatePostDeserializationAttribute">
-             <summary>
-             Method decorated with this attribute will be invoked after whole
-             deserialization has been finished in the opposite order they were encountered
-             during deserialization.
-             </summary>
-            </member>
-        <member name="T:Antmicro.Migrant.Hooks.LatePostSerializationAttribute">
-             <summary>
-             Method decorated with this attribute will be invoked after the whole
-             serialization has been finished in the opposite order they were encountered
-             during serialization.
-             </summary>
-            </member>
-        <member name="T:Antmicro.Migrant.Hooks.PostSerializationAttribute">
-             <summary>
-             Method decorated with this attribute will be invoked after deserialization
-             of given object and all objects referenced by this object.
-             </summary>
-            </member>
-        <member name="T:Antmicro.Migrant.Hooks.PostDeserializationAttribute">
-             <summary>
-             Method decorated with this attribute will be invoked after deserialization
-             of given object and all objects referenced by this object.
-             </summary>
-            </member>
-        <member name="T:Antmicro.Migrant.Customization.VersionToleranceLevel">
-             <summary>
-             Level of the version tolerance, that is how much layout of the deserialized type can differ
-             from the (original) layout of the serialized type.
-             </summary>
-            </member>
-        <member name="F:Antmicro.Migrant.Customization.VersionToleranceLevel.AllowGuidChange">
-             <summary>
-             Difference in guid is allowed which means that classes may be from different compilation of the same library.
-             </summary>
-            </member>
-        <member name="F:Antmicro.Migrant.Customization.VersionToleranceLevel.AllowFieldAddition">
-             <summary>
-             The new layout can have more fields that the old one. They are initialized to their default values.
-             This flag implies <see cref="F:Antmicro.Migrant.Customization.VersionToleranceLevel.AllowGuidChange" />.
-             </summary>
-            </member>
-        <member name="F:Antmicro.Migrant.Customization.VersionToleranceLevel.AllowFieldRemoval">
-             <summary>
-             The new layout can have less fields that the old one. Values of the missing one are ignored.
-             This flag implies <see cref="F:Antmicro.Migrant.Customization.VersionToleranceLevel.AllowGuidChange" />.
-             </summary>
-            </member>
-        <member name="F:Antmicro.Migrant.Customization.VersionToleranceLevel.AllowInheritanceChainChange">
-             <summary>
-             Classes inheritance hirarchy can vary between new and old layout, e.g., base class can be removed.
-             This flag implies <see cref="F:Antmicro.Migrant.Customization.VersionToleranceLevel.AllowGuidChange" />.
-             </summary>
-            </member>
-        <member name="F:Antmicro.Migrant.Customization.VersionToleranceLevel.AllowAssemblyVersionChange">
-             <summary>
-             Assemblies version can very between new and old layout.
-             This flag implies <see cref="F:Antmicro.Migrant.Customization.VersionToleranceLevel.AllowGuidChange" />.
-             </summary>
-            </member>
-        <member name="T:Antmicro.Migrant.DeserializationResult">
-             <summary>
-             Enumeration describing possible desarialization operation results.
-             </summary>
-            </member>
-        <member name="F:Antmicro.Migrant.DeserializationResult.OK">
-             <summary>
-             Deserialization succeeded.
-             </summary>
-            </member>
-        <member name="F:Antmicro.Migrant.DeserializationResult.WrongMagic">
-             <summary>
-             Magic number was different than expected.
-             </summary>
-            </member>
-        <member name="F:Antmicro.Migrant.DeserializationResult.WrongVersion">
-             <summary>
-             Serializer version mismatch. 
-             </summary>
-            </member>
-        <member name="F:Antmicro.Migrant.DeserializationResult.TypeStructureChanged">
-             <summary>
-             The type structure has changed in a not allowed way.
-             </summary>
-            </member>
-        <member name="F:Antmicro.Migrant.DeserializationResult.StreamCorrupted">
-             <summary>
-             Data in a stream was corrupted.
-             </summary>
-            </member>
-        <member name="F:Antmicro.Migrant.DeserializationResult.WrongStreamConfiguration">
-             <summary>
-             Type stamping configuration is inconsistent between stream and deserializer settings.
-             </summary>
-            </member>
-        <member name="T:Antmicro.Migrant.ObjectIdentifierContext">
-             <summary>
-             A context of object identifier, i.e. all identified objects (weakly referenced) with their identifiers. 
-             </summary>
-            </member>
-        <member name="T:Antmicro.Migrant.Customization.ReferencePreservation">
-             <summary>
-             Used with open stream serialization and tells serializer how to deal with references
-             between different sessions of serialization.
-             </summary>
-            </member>
-        <member name="F:Antmicro.Migrant.Customization.ReferencePreservation.DoNotPreserve">
-             <summary>
-             If the same object is written in a different serialization session, it is written as 
-             a newly encountered object.
-             </summary>
-            </member>
-        <member name="F:Antmicro.Migrant.Customization.ReferencePreservation.Preserve">
-             <summary>
-             Identity of all objects is preserved between sessions. This option will, however, create
-             a hard reference for each so far serialized object. This means that all objects serialized
-             so for will live until open stream serializer is disposed.
-             </summary>
-            </member>
-        <member name="F:Antmicro.Migrant.Customization.ReferencePreservation.UseWeakReference">
-             <summary>
-             Object identity is preserved without hard references. This option is conceptually the best one,
-             can however vastly influence performance.
-             </summary>
-            </member>
-        <member name="T:Antmicro.Migrant.VersionTolerance.VersionToleranceException">
-             <summary>
-             Class representing exception thrown when version tolerance verification mechanism detects disallowed changes in type structures.
-             </summary>
-            </member>
-        <member name="M:Antmicro.Migrant.VersionTolerance.VersionToleranceException.#ctor">
-             <summary>
-             Initializes a new instance of the <see cref="T:Antmicro.Migrant.VersionTolerance.VersionToleranceException" /> class.
-             </summary>
-            </member>
-        <member name="M:Antmicro.Migrant.VersionTolerance.VersionToleranceException.#ctor(System.String)">
-             <summary>
-             Initializes a new instance of the <see cref="T:Antmicro.Migrant.VersionTolerance.VersionToleranceException" /> class.
-             </summary>
-             <param name="message">Message.</param>
-            </member>
-        <member name="M:Antmicro.Migrant.VersionTolerance.VersionToleranceException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-             <summary>
-             Initializes a new instance of the <see cref="T:Antmicro.Migrant.VersionTolerance.VersionToleranceException" /> class.
-             </summary>
-             <param name="info">Info.</param>
-             <param name="context">Context.</param>
-            </member>
-        <member name="M:Antmicro.Migrant.VersionTolerance.VersionToleranceException.#ctor(System.String,System.Exception)">
-             <summary>
-             Initializes a new instance of the <see cref="T:Antmicro.Migrant.VersionTolerance.VersionToleranceException" /> class.
-             </summary>
-             <param name="message">Message.</param>
-             <param name="innerException">Inner exception.</param>
-            </member>
+            <summary>
+            When used on a class, it prevents the serialization of all fields which have the type of
+            that class. When used on a field, it prevents the serialization of this field.
+            </summary>
+        </member>
         <member name="T:Antmicro.Migrant.Utilities.SwapList">
-             <summary>
-             Key/value pair list in which more generic types are always inserted after their
-             specializations.
-             </summary>
-            </member>
+            <summary>
+            Key/value pair list in which more generic types are always inserted after their
+            specializations.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.Utilities.SwapList.#ctor">
-             <summary>
-             Initializes a new instance of the <see cref="T:Antmicro.Migrant.Utilities.SwapList" /> class.
-             </summary>
-            </member>
+            <summary>
+            Initializes a new instance of the <see cref="T:Antmicro.Migrant.Utilities.SwapList"/> class.
+            </summary>
+        </member>
         <member name="M:Antmicro.Migrant.Utilities.SwapList.AddOrReplace(System.Type,System.Delegate)">
-             <summary>
-             Adds new key/value pair or replaces existing one if the key already exists.
-             </summary>
-             <param name="key">Key.</param>
-             <param name="value">Value.</param>
-            </member>
+            <summary>
+            Adds new key/value pair or replaces existing one if the key already exists.
+            </summary>
+            <param name="key">Key.</param>
+            <param name="value">Value.</param>
+        </member>
         <member name="M:Antmicro.Migrant.Utilities.SwapList.AddGenericTemplate(System.Type,System.Func{System.Type,System.Delegate})">
-             <summary>
-             Adds new key/dynamically generated pair or replaces one if the key already exists.
-             </summary>
-             <param name="genericType">Key.</param>
-             <param name="actualDelegateGenerator">Function generating final value.</param>
-            </member>
+            <summary>
+            Adds new key/dynamically generated pair or replaces one if the key already exists.
+            </summary>
+            <param name="genericType">Key.</param>
+            <param name="actualDelegateGenerator">Function generating final value.</param>
+        </member>
         <member name="M:Antmicro.Migrant.Utilities.SwapList.GetByIndex(System.Int32)">
-             <summary>
-             Gets a delegate by an index.
-             </summary>
-             <returns>Delegate at a given index.</returns>
-             <param name="index">The index of the element.</param>
-            </member>
+            <summary>
+            Gets a delegate by an index.
+            </summary>
+            <returns>Delegate at a given index.</returns>
+            <param name="index">The index of the element.</param>
+        </member>
         <member name="M:Antmicro.Migrant.Utilities.SwapList.FindMatchingIndex(System.Type)">
-             <summary>
-             Finds the index of the delegate that matches given type.
-             </summary>
-             <returns>The index of delegate that matches given type or -1 if it could not be found.</returns>
-             <param name="value">Type to match.</param>
-            </member>
+            <summary>
+            Finds the index of the delegate that matches given type.
+            </summary>
+            <returns>The index of delegate that matches given type or -1 if it could not be found.</returns>
+            <param name="value">Type to match.</param>
+        </member>
+        <member name="T:Antmicro.Migrant.Hooks.PreSerializationAttribute">
+            <summary>
+            Method decorated with this attribute will be invoked before serialization.
+            </summary>
+        </member>
+        <member name="T:Antmicro.Migrant.Hooks.LatePostDeserializationAttribute">
+            <summary>
+            Method decorated with this attribute will be invoked after whole
+            deserialization has been finished in the opposite order they were encountered
+            during deserialization.
+            </summary>
+        </member>
+        <member name="T:Antmicro.Migrant.Hooks.LatePostSerializationAttribute">
+            <summary>
+            Method decorated with this attribute will be invoked after the whole
+            serialization has been finished in the opposite order they were encountered
+            during serialization.
+            </summary>
+        </member>
+        <member name="T:Antmicro.Migrant.Hooks.PostSerializationAttribute">
+            <summary>
+            Method decorated with this attribute will be invoked after deserialization
+            of given object and all objects referenced by this object.
+            </summary>
+        </member>
+        <member name="T:Antmicro.Migrant.Hooks.PostDeserializationAttribute">
+            <summary>
+            Method decorated with this attribute will be invoked after deserialization
+            of given object and all objects referenced by this object.
+            </summary>
+        </member>
+        <member name="T:Antmicro.Migrant.Customization.Settings">
+            <summary>
+            Contains serialization settings.
+            </summary>
+            	
+        </member>
+        <member name="P:Antmicro.Migrant.Customization.Settings.SerializationMethod">
+            <summary>
+            Gets the method used for serialization.
+            </summary>
+        </member>
+        <member name="P:Antmicro.Migrant.Customization.Settings.DeserializationMethod">
+            <summary>
+            Gets the method used for deserialization.
+            </summary>
+        </member>
+        <member name="P:Antmicro.Migrant.Customization.Settings.VersionTolerance">
+            <summary>
+            Specifies how much the layout of the serialized class can differ from the version
+            that is available when that data is deserialized.
+            </summary>
+        </member>
+        <member name="P:Antmicro.Migrant.Customization.Settings.SupportForISerializable">
+            <summary>
+            Specifies whether Migrant should use GetObjectData approach for serialization.
+            </summary>
+            <value><c>true</c> if support for ISerializable is active; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Antmicro.Migrant.Customization.Settings.SupportForIXmlSerializable">
+            <summary>
+            Specifies whether Migrant should utilize IXmlSerializable interface.
+            </summary>
+            <value><c>true</c> if support for IXmlSserializable is active; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Antmicro.Migrant.Customization.Settings.TreatCollectionAsUserObject">
+            <summary>>
+            Gets the value of flag specifing if collection objects are to be deserialized without optimization (treated as normal user objects).
+            </summary>
+        </member>
+        <member name="P:Antmicro.Migrant.Customization.Settings.UseBuffering">
+            <summary>
+            Gets a value indicating whether buffering is used. Without buffering, all writes are going
+            directly to underlying and stream and no padding is used. Reads behave accordingly.
+            </summary>
+            <value><c>true</c> if buffering is used; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Antmicro.Migrant.Customization.Settings.ReferencePreservation">
+            <summary>
+            Tells serializer how to treat identity of objects between sessions of open
+            stream serialization.
+            </summary>
+        </member>
+        <member name="P:Antmicro.Migrant.Customization.Settings.DisableTypeStamping">
+            <summary>
+            Specifies if type stamping should be disabled in order to improve performance and limit output stream size.
+            </summary>
+            <value><c>true</c> if disable type stamping; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Antmicro.Migrant.Customization.Settings.ForceStampVerification">
+            <summary>
+            Specifies if type stamps should be compared even when GUID has not changed.
+            This is used in internal framework's tests.
+            </summary>
+        </member>
+        <member name="M:Antmicro.Migrant.Customization.Settings.#ctor(Antmicro.Migrant.Customization.Method,Antmicro.Migrant.Customization.Method,Antmicro.Migrant.Customization.VersionToleranceLevel,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,Antmicro.Migrant.Customization.ReferencePreservation,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Antmicro.Migrant.Customization.Settings"/> class.
+            </summary>
+            <param name='serializationMethod'>
+            Method used for serialization.
+            </param>
+            <param name='deserializationMethod'>
+            Method used for deserialization.
+            </param>
+            <param name='versionTolerance'>
+            Specifies the possible level of difference between class layout when it was serialized and in the
+            moment of deserialization.
+            </param>
+            <param name = "treatCollectionAsUserObject">
+            Specifies if collection objects are to be deserialized without optimization (treated as normal user objects).
+            </param>
+            <param name = "supportForISerializable">
+            Specifies whether Migrant should use GetObjectData approach for serialization.
+            </param>
+            <param name="supportForIXmlSerializable"> 
+            Specifies whether Migrant should use xml serialization on objects implementing IXmlSerializable.
+            </param>
+            <param name="useBuffering"> 
+            True if buffering should be used, false if writes should directly go to the stream and reads should never read
+            data in advance. Disabling buffering also disables padding.
+            </param>
+            <param name="disableTypeStamping"> 
+            Specifies if type stamping should be disabled in order to improve performance and limit output stream size.
+            </param>
+            <param name="referencePreservation"> 
+            Tells serializer how to treat references between sessions of open stream serialization.
+            </param>
+            <param name="forceStampVerification">
+            Specifies if type stamps should be compared even when GUID has not changed.
+            </param>
+        </member>
+        <member name="M:Antmicro.Migrant.Customization.Settings.With(System.Nullable{Antmicro.Migrant.Customization.Method},System.Nullable{Antmicro.Migrant.Customization.Method},System.Nullable{Antmicro.Migrant.Customization.VersionToleranceLevel},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{Antmicro.Migrant.Customization.ReferencePreservation},System.Nullable{System.Boolean})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Antmicro.Migrant.Customization.Settings"/> class.
+            </summary>
+            <param name='serializationMethod'>
+            Method used for serialization.
+            </param>
+            <param name='deserializationMethod'>
+            Method used for deserialization.
+            </param>
+            <param name='versionTolerance'>
+            Specifies the possible level of difference between class layout when it was serialized and in the
+            moment of deserialization.
+            </param>
+            <param name = "treatCollectionAsUserObject">
+            Specifies if collection objects are to be deserialized without optimization (treated as normal user objects).
+            </param>
+            <param name = "supportForISerializable">
+            Specifies whether Migrant should use GetObjectData approach for serialization.
+            </param>
+            <param name="useBuffering"> 
+            True if buffering should be used, false if writes should directly go to the stream and reads should never read
+            data in advance. Disabling buffering also disables padding.
+            </param>
+            <param name="disableTypeStamping"> 
+            Specifies if type stamping should be disabled in order to improve performance and limit output stream size.
+            </param>
+            <param name="referencePreservation"> 
+            Tells serializer how to treat references between sessions of open stream serialization.
+            </param>
+            <param name="forceStampVerification">
+            Specifies if type stamps should be compared even when GUID has not changed.
+            </param>
+        </member>
+        <member name="T:Antmicro.Migrant.Customization.Method">
+            <summary>
+            Method of serialization or deserialization.
+            </summary>
+        </member>
+        <member name="F:Antmicro.Migrant.Customization.Method.Generated">
+            <summary>
+            (De)Serialization is done using write method generator. For any type which encountered for the first time, the methods to serialize it are
+            generated.
+            </summary>
+        </member>
+        <member name="F:Antmicro.Migrant.Customization.Method.Reflection">
+            <summary>
+            (De)Serialization is done directly using reflection.
+            </summary>
+        </member>
+        <member name="T:Antmicro.Migrant.Customization.VersionToleranceLevel">
+            <summary>
+            Level of the version tolerance, that is how much layout of the deserialized type can differ
+            from the (original) layout of the serialized type.
+            </summary>
+        </member>
+        <member name="F:Antmicro.Migrant.Customization.VersionToleranceLevel.AllowGuidChange">
+            <summary>
+            Difference in guid is allowed which means that classes may be from different compilation of the same library.
+            </summary>
+        </member>
+        <member name="F:Antmicro.Migrant.Customization.VersionToleranceLevel.AllowFieldAddition">
+            <summary>
+            The new layout can have more fields that the old one. They are initialized to their default values.
+            This flag implies <see cref="F:Antmicro.Migrant.Customization.VersionToleranceLevel.AllowGuidChange"/>.
+            </summary>
+        </member>
+        <member name="F:Antmicro.Migrant.Customization.VersionToleranceLevel.AllowFieldRemoval">
+            <summary>
+            The new layout can have less fields that the old one. Values of the missing one are ignored.
+            This flag implies <see cref="F:Antmicro.Migrant.Customization.VersionToleranceLevel.AllowGuidChange"/>.
+            </summary>
+        </member>
+        <member name="F:Antmicro.Migrant.Customization.VersionToleranceLevel.AllowInheritanceChainChange">
+            <summary>
+            Classes inheritance hirarchy can vary between new and old layout, e.g., base class can be removed.
+            This flag implies <see cref="F:Antmicro.Migrant.Customization.VersionToleranceLevel.AllowGuidChange"/>.
+            </summary>
+        </member>
+        <member name="F:Antmicro.Migrant.Customization.VersionToleranceLevel.AllowAssemblyVersionChange">
+            <summary>
+            Assemblies version can very between new and old layout.
+            This flag implies <see cref="F:Antmicro.Migrant.Customization.VersionToleranceLevel.AllowGuidChange"/>.
+            </summary>
+        </member>
+        <member name="T:Antmicro.Migrant.Customization.ReferencePreservation">
+            <summary>
+            Used with open stream serialization and tells serializer how to deal with references
+            between different sessions of serialization.
+            </summary>
+        </member>
+        <member name="F:Antmicro.Migrant.Customization.ReferencePreservation.DoNotPreserve">
+            <summary>
+            If the same object is written in a different serialization session, it is written as 
+            a newly encountered object.
+            </summary>
+        </member>
+        <member name="F:Antmicro.Migrant.Customization.ReferencePreservation.Preserve">
+            <summary>
+            Identity of all objects is preserved between sessions. This option will, however, create
+            a hard reference for each so far serialized object. This means that all objects serialized
+            so for will live until open stream serializer is disposed.
+            </summary>
+        </member>
+        <member name="F:Antmicro.Migrant.Customization.ReferencePreservation.UseWeakReference">
+            <summary>
+            Object identity is preserved without hard references. This option is conceptually the best one,
+            can however vastly influence performance.
+            </summary>
+        </member>
+        <member name="T:Antmicro.Migrant.VersionTolerance.VersionToleranceException">
+            <summary>
+            Class representing exception thrown when version tolerance verification mechanism detects disallowed changes in type structures.
+            </summary>
+        </member>
+        <member name="M:Antmicro.Migrant.VersionTolerance.VersionToleranceException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Antmicro.Migrant.VersionTolerance.VersionToleranceException"/> class.
+            </summary>
+        </member>
+        <member name="M:Antmicro.Migrant.VersionTolerance.VersionToleranceException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Antmicro.Migrant.VersionTolerance.VersionToleranceException"/> class.
+            </summary>
+            <param name="message">Message.</param>
+        </member>
+        <member name="M:Antmicro.Migrant.VersionTolerance.VersionToleranceException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Antmicro.Migrant.VersionTolerance.VersionToleranceException"/> class.
+            </summary>
+            <param name="info">Info.</param>
+            <param name="context">Context.</param>
+        </member>
+        <member name="M:Antmicro.Migrant.VersionTolerance.VersionToleranceException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Antmicro.Migrant.VersionTolerance.VersionToleranceException"/> class.
+            </summary>
+            <param name="message">Message.</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="T:Antmicro.Migrant.DeserializationResult">
+            <summary>
+            Enumeration describing possible desarialization operation results.
+            </summary>
+        </member>
+        <member name="F:Antmicro.Migrant.DeserializationResult.OK">
+            <summary>
+            Deserialization succeeded.
+            </summary>
+        </member>
+        <member name="F:Antmicro.Migrant.DeserializationResult.WrongMagic">
+            <summary>
+            Magic number was different than expected.
+            </summary>
+        </member>
+        <member name="F:Antmicro.Migrant.DeserializationResult.WrongVersion">
+            <summary>
+            Serializer version mismatch. 
+            </summary>
+        </member>
+        <member name="F:Antmicro.Migrant.DeserializationResult.TypeStructureChanged">
+            <summary>
+            The type structure has changed in a not allowed way.
+            </summary>
+        </member>
+        <member name="F:Antmicro.Migrant.DeserializationResult.StreamCorrupted">
+            <summary>
+            Data in a stream was corrupted.
+            </summary>
+        </member>
+        <member name="F:Antmicro.Migrant.DeserializationResult.WrongStreamConfiguration">
+            <summary>
+            Type stamping configuration is inconsistent between stream and deserializer settings.
+            </summary>
+        </member>
+        <member name="T:Antmicro.Migrant.ObjectIdentifierContext">
+            <summary>
+            A context of object identifier, i.e. all identified objects (weakly referenced) with their identifiers. 
+            </summary>
+        </member>
     </members>
 </doc>

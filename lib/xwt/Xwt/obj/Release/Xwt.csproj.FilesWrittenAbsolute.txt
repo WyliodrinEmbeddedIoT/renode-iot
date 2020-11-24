@@ -1,5 +1,5 @@
-/home/cosmin/git/renode/lib/xwt/Xwt/obj/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/cosmin/git/renode/lib/xwt/Xwt/bin/Release/Xwt.dll.mdb
-/home/cosmin/git/renode/lib/xwt/Xwt/bin/Release/Xwt.dll
-/home/cosmin/git/renode/lib/xwt/Xwt/obj/Release/Xwt.dll
-/home/cosmin/git/renode/lib/xwt/Xwt/obj/Release/Xwt.dll.mdb
+/home/tock/renode-iot/lib/xwt/Xwt/obj/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/tock/renode-iot/lib/xwt/Xwt/bin/Release/Xwt.pdb
+/home/tock/renode-iot/lib/xwt/Xwt/bin/Release/Xwt.dll
+/home/tock/renode-iot/lib/xwt/Xwt/obj/Release/Xwt.dll
+/home/tock/renode-iot/lib/xwt/Xwt/obj/Release/Xwt.pdb

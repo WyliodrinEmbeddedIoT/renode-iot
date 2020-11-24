@@ -1,5 +1,5 @@
-/home/cosmin/git/renode/lib/AntShell/AntShell/obj/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/cosmin/git/renode/lib/AntShell/AntShell/bin/Release/AntShell.dll
-/home/cosmin/git/renode/lib/AntShell/AntShell/obj/Release/AntShell.dll
-/home/cosmin/git/renode/lib/AntShell/AntShell/bin/Release/Migrant.dll
-/home/cosmin/git/renode/lib/AntShell/AntShell/bin/Release/Migrant.xml
+/home/tock/renode-iot/lib/AntShell/AntShell/obj/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/tock/renode-iot/lib/AntShell/AntShell/bin/Release/AntShell.dll
+/home/tock/renode-iot/lib/AntShell/AntShell/obj/Release/AntShell.dll
+/home/tock/renode-iot/lib/AntShell/AntShell/bin/Release/Migrant.dll
+/home/tock/renode-iot/lib/AntShell/AntShell/bin/Release/Migrant.xml
